@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+   <html lang="en" ng-app="cattleBarn">
+   <head>
+	<title>Bulls</title> </head>
+	<body>
+
+	       <div class="container-fluid">
+	       <!--<ul class="nav nav-tabs">
+			  <li class="nav-item">
+			    <a class="nav-link active" href="#">Mortality/Carcass</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">Med/Measurements</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">Offspring</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link href="#">Breeding</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">EPD</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link href="#">Semen</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">Pics</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link href="#">Pedigree</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">Bloodlines</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link href="#">Show</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link href="#">Notes/Documents</a>
+			  </li>
+			</ul>-->
+			<div class="row">
+				<div class="col-md-2"><h3>Bulls</h3></div>
+				<!--<div class="col-md-10"><button ng-click="addNew()" type="button" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New</button></div>
+			</div>-->
+			
+			<table class="table-striped table-bordered home-tayble">
+			  <thead>
+			    <tr>
+			      <th>Name/ID</th>
+			      <th>Status</th> 
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr ng-repeat="bull in bullList">
+			      <td>{{bull.name}}</td>
+			      <td>{{bull.status}}</td>
+			    </tr> 
+			  </tbody>
+			</table>
+
+			
+
+                   
+</div>
+	 </body>
+
+</html>

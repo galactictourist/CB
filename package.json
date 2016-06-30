@@ -1,0 +1,24 @@
+{
+  "name": "cattlebarn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager ./ cattlebarn --all --out ~/Desktop/cattlebarn --version 1.2.2 --overwrite"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron-packager": "^7.0.4",
+    "electron-prebuilt": "^1.2.2"
+  },
+  "dependencies": {
+    "angular": "^1.5.6",
+    "angular-route": "^1.5.6",
+    "bootstrap": "^3.3.6",
+    "jquery": "^3.0.0",
+    "jquery.2": "^1.0.0",
+    "lokijs": "^1.3.19"
+  }
+}
