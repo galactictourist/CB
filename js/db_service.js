@@ -1,11 +1,11 @@
 // var DBService = angular.module('DBService', ['$q'])
 // .service('dbservice', function ($q) {
-   	
-   	 // return {
-     //        getNotes: getNotes,
-     //        addNote: addNote,
-     //        deleteNote: deleteNote
-     //    };
+
+// return {
+//        getNotes: getNotes,
+//        addNote: addNote,
+//        deleteNote: deleteNote
+//    };
 
 //         function getNotes(){
 //             var deferred = $q.defer();
@@ -44,5 +44,3 @@
 //         }
 
 // });
-
- 
