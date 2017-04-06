@@ -123,8 +123,6 @@ cattleBarn.config(['$routeProvider', function ($routeProvider) {
   });
 }]);
 
-
-
 cattleBarn.controller("HomeController", function ($scope) {
   $scope.flag = false;
   $scope.dbItems = '';
