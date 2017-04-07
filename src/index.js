@@ -14,11 +14,7 @@ import './ctrl/BullsController'
 import './ctrl/BullsMortalityController'
 import './ctrl/BullsMedMeasController'
 import './ctrl/BullsOffspringController'
-
-cattleBarn.controller("CowsController", function ($scope) {
-    $scope.name = "Sandeep Kumar";
-
-});
+import './ctrl/CowsController'
 
 cattleBarn.controller("NewCowController", function ($scope) {});
 
