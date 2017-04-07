@@ -9,12 +9,9 @@ export const cattleBarn = angular.module('cattleBarn', [
 cattleBarn.run(function ($rootScope) {
     $rootScope.checkDB = function () {
         Ranch.find({}, function (err, docs) {
-
             angular.forEach(docs, function (doc, index) {
                 console.log('a document ' + JSON.stringify(doc));
-
             });
-
         });
     };
 
