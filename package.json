@@ -20,6 +20,7 @@
     "angular-route": "^1.6.4",
     "bootstrap": "^3.3.7",
     "electron-reload": "^1.1.0",
+    "jquery": "^3.2.1",
     "jquery.2": "^1.0.0",
     "level-js": "^2.2.4",
     "linvodb3": "^3.25.0",

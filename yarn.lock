@@ -122,9 +122,9 @@ aws4@^1.2.1:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
 
-"bagpipe@github:ivshti/bagpipe":
+bagpipe@Ivshti/bagpipe:
   version "0.3.7"
-  resolved "https://codeload.github.com/ivshti/bagpipe/tar.gz/97881f59aeee25bad66f8542fe80f19d1a281c93"
+  resolved "https://codeload.github.com/Ivshti/bagpipe/tar.gz/97881f59aeee25bad66f8542fe80f19d1a281c93"
   dependencies:
     inherits "git://github.com/ivshti/inherits.git"
 
@@ -868,6 +868,10 @@ jquery.2@^1.0.0:
 jquery@^2.0:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-2.2.4.tgz#2c89d6889b5eac522a7eea32c14521559c6cbf02"
+
+jquery@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 
 jsbn@~0.1.0:
   version "0.1.1"
@@ -1769,17 +1773,17 @@ util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
 
+util@Ivshti/node-util:
+  version "0.10.3"
+  resolved "https://codeload.github.com/Ivshti/node-util/tar.gz/97b6beed8e0e478cd4184965ac94bf316f94e5f5"
+  dependencies:
+    inherits Ivshti/inherits
+
 util@^0.10.3:
   version "0.10.3"
   resolved "https://registry.yarnpkg.com/util/-/util-0.10.3.tgz#7afb1afe50805246489e3db7fe0ed379336ac0f9"
   dependencies:
     inherits "2.0.1"
-
-"util@github:ivshti/node-util":
-  version "0.10.3"
-  resolved "https://codeload.github.com/ivshti/node-util/tar.gz/97b6beed8e0e478cd4184965ac94bf316f94e5f5"
-  dependencies:
-    inherits Ivshti/inherits
 
 uuid@^2.0.1:
   version "2.0.3"
