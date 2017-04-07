@@ -7,7 +7,7 @@ import {
     cattleBarn
 } from './app'
 
-cattleBarn.controller('NavCtrl', ['$scope', function ($scope) {}]);
+import './ctrl/NavCtrl'
 
 cattleBarn.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/home', {
