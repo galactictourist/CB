@@ -108,7 +108,6 @@ cattleBarn.controller("HomeController", function ($scope) {
         } else {
             return "views/home-view.html";
         }
-        return "";
     }
 });
 
