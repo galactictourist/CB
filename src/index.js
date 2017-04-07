@@ -15,8 +15,7 @@ import './ctrl/BullsMortalityController'
 import './ctrl/BullsMedMeasController'
 import './ctrl/BullsOffspringController'
 import './ctrl/CowsController'
-
-cattleBarn.controller("NewCowController", function ($scope) {});
+import './ctrl/NewCowController'
 
 cattleBarn.controller("NewCalveController", function ($scope) {});
 
