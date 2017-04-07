@@ -11,8 +11,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron-packager": "^7.0.4",
-    "electron-prebuilt": "^1.2.2",
+    "electron-packager": "^8.6.0",
+    "electron-prebuilt": "^1.4.13",
     "typescript": "^2.2.2"
   },
   "dependencies": {
