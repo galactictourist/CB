@@ -18,8 +18,7 @@ import './ctrl/CowsController'
 import './ctrl/NewCowController'
 import './ctrl/NewCalveController'
 import './ctrl/NewBullController'
-
-cattleBarn.controller("NewSteerController", function ($scope) {});
+import './ctrl/NewSteerController'
 
 cattleBarn.controller("RanchInfoController", function ($scope, $q, $rootScope) {
     $scope.ranch = {};
