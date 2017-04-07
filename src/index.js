@@ -3,7 +3,9 @@ import {
     Ranch
 } from './db'
 
-var cattleBarn = angular.module("cattleBarn", ['ng', 'ngRoute', 'ui.bootstrap']);
+import {
+    cattleBarn
+} from './app'
 
 cattleBarn.run(function ($rootScope) {
     $rootScope.checkDB = function () {
