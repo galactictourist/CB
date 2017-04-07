@@ -10,4 +10,4 @@ LinvoDB.defaults.store = {
 LinvoDB.dbPath = process.cwd();
 
 // New model; 
-var Ranch = new LinvoDB("ranch", {});
+export const Ranch = new LinvoDB("ranch", {});
