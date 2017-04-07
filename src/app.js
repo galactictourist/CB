@@ -1,3 +1,7 @@
+import {
+    Ranch
+} from './db'
+
 export const cattleBarn = angular.module('cattleBarn', [
     'ng', 'ngRoute', 'ui.bootstrap'
 ])
