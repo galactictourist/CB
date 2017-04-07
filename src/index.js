@@ -11,32 +11,6 @@ import './ctrl/NavCtrl'
 import './ctrl/HomeController'
 import './ctrl/NewRanchController'
 
-cattleBarn.controller("BullsIndexController", function ($scope, $q) {
-    $scope.getBulls = function () {
-        var q = $q.defer();
-
-        Ranch.find({
-            type: 'bull'
-        }, function (err, docs) {
-            q.resolve(docs);
-        });
-
-        return q.promise;
-    }
-
-    $scope.bullList = {};
-    $scope.promise = $scope.getBulls();
-
-    $scope.promise.then(
-        function (v) {
-            $scope.bullList = v
-        },
-        function (err) {
-            console.log(err)
-        }
-    );
-});
-
 cattleBarn.controller("BullsController", function ($scope, $q, $routeParams, $window, $location) {
     $scope.bullId = $routeParams.param;
     console.log('bull id ' + $routeParams.param);
