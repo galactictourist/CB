@@ -7,27 +7,6 @@ import {
     cattleBarn
 } from './app'
 
-cattleBarn.run(function ($rootScope) {
-    $rootScope.checkDB = function () {
-        Ranch.find({}, function (err, docs) {
-
-            angular.forEach(docs, function (doc, index) {
-                console.log('a document ' + JSON.stringify(doc));
-
-            });
-
-        });
-    };
-
-    $rootScope.clearDB = function () {
-        Ranch.remove({}, {
-            multi: true
-        }, function (err, numRemoved) {
-            console.log(numRemoved + ' removed documents');
-        });
-    };
-});
-
 cattleBarn.controller('NavCtrl', ['$scope', function ($scope) {}]);
 
 cattleBarn.config(['$routeProvider', function ($routeProvider) {
