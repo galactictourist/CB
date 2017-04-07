@@ -11,6 +11,7 @@ import './ctrl/NavCtrl'
 import './ctrl/HomeController'
 import './ctrl/NewRanchController'
 import './ctrl/BullsController'
+import './ctrl/BullsMortalityController'
 
 cattleBarn.controller("BullsMedMeasController", function ($scope, $q, $routeParams, $window, $location) {
     $('#myTabs a').click(function (e) {
