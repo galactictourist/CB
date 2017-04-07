@@ -24,101 +24,76 @@ cattleBarn.run(function ($rootScope) {
 cattleBarn.controller('NavCtrl', ['$scope', function ($scope) {}]);
 
 cattleBarn.config(['$routeProvider', function ($routeProvider) {
-  $routeProvider.
-  when('/home', {
+  $routeProvider.when('/home', {
     templateUrl: 'views/home.html',
     controller: 'HomeController'
-  }).
-  when('/bulls-index', {
+  }).when('/bulls-index', {
     templateUrl: 'views/cattle/bulls_index.html',
     controller: 'BullsIndexController'
-  }).
-  when('/bulls/:param', {
+  }).when('/bulls/:param', {
     templateUrl: 'views/cattle/bulls.html',
     controller: 'BullsController'
-  }).
-  when('/bulls/mortality/:param', {
+  }).when('/bulls/mortality/:param', {
     templateUrl: 'views/cattle/bulls_mortality.html',
     controller: 'BullsMortalityController'
-  }).
-  when('/bulls/med-meas/:param', {
+  }).when('/bulls/med-meas/:param', {
     templateUrl: 'views/cattle/bulls_med_meas.html',
     controller: 'BullsMedMeasController'
-  }).
-  when('/bulls/offspring/:param', {
+  }).when('/bulls/offspring/:param', {
     templateUrl: 'views/cattle/bulls_offspring.html',
     controller: 'BullsOffspringController'
-  }).
-  when('/cows', {
+  }).when('/cows', {
     templateUrl: 'views/cattle/cows.html',
     controller: 'CowsController'
-  }).
-  when('/calves', {
+  }).when('/calves', {
     templateUrl: 'views/cattle/calves.html',
     controller: 'CalvesController'
-  }).
-  when('/steers', {
+  }).when('/steers', {
     templateUrl: 'views/cattle/steers.html',
     controller: 'SteersController'
-  }).
-  when('/heifers', {
+  }).when('/heifers', {
     templateUrl: 'views/cattle/heifers.html',
     controller: 'HeifersController'
-  }).
-  when('/all', {
+  }).when('/all', {
     templateUrl: 'views/cattle/all.html',
     controller: 'AllController'
-  }).
-  when('/new-bull', {
+  }).when('/new-bull', {
     templateUrl: 'views/cattle/new-bull.html',
     controller: 'NewBullController'
-  }).
-  when('/new-cow', {
+  }).when('/new-cow', {
     templateUrl: 'views/cattle/new-cow.html',
     controller: 'NewCowController'
-  }).
-  when('/new-calve', {
+  }).when('/new-calve', {
     templateUrl: 'views/cattle/new-calve.html',
     controller: 'NewCalveController'
-  }).
-  when('/new-steer', {
+  }).when('/new-steer', {
     templateUrl: 'views/cattle/new-steer.html',
     controller: 'NewSteerController'
-  }).
-  when('/settings', {
+  }).when('/settings', {
     templateUrl: 'views/admin/settings.html',
     controller: 'SettingsController'
-  }).
-  when('/ranchinfo', {
+  }).when('/ranchinfo', {
     templateUrl: 'views/admin/ranchinfo.html',
     controller: 'RanchInfoController'
-  }).
-  when('/contacts', {
-      templateUrl: 'views/admin/contacts.html',
-      controller: 'ContactsController'
-    })
-    .
-  when('/reports', {
+  }).when('/contacts', {
+    templateUrl: 'views/admin/contacts.html',
+    controller: 'ContactsController'
+  }).when('/reports', {
     templateUrl: 'views/admin/reports.html',
     controller: 'ReportsController'
-  }).
-  when('/sales', {
+  }).when('/sales', {
     templateUrl: 'views/admin/sales.html',
     controller: 'SalesController'
-  }).
-  when('/equipment-inventory', {
+  }).when('/equipment-inventory', {
     templateUrl: 'views/admin/equipment-inventory.html',
     controller: 'Equip-Inv-Controller'
-  }).
-  when('/pastures-pens', {
+  }).when('/pastures-pens', {
     templateUrl: 'views/admin/pastures-pens.html',
     controller: 'Past-Pen-Controller'
-  }).
-  when('/pedigrees', {
+  }).when('/pedigrees', {
     templateUrl: 'views/admin/pedigrees.html',
     controller: 'PedigreesController'
-  }).
-  otherwise({
+  }).otherwise({
     redirectTo: '/home'
   });
 }]);
