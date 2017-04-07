@@ -8,7 +8,7 @@ import {
 } from './app'
 
 import './ctrl/NavCtrl'
-import './ctrl/NavCtrl'
+import './ctrl/HomeController'
 
 cattleBarn.controller("NewRanchController", function ($scope, $window, $location) {
     $scope.ranch = {}; // model to hold form values
