@@ -16,8 +16,7 @@ import './ctrl/BullsMedMeasController'
 import './ctrl/BullsOffspringController'
 import './ctrl/CowsController'
 import './ctrl/NewCowController'
-
-cattleBarn.controller("NewCalveController", function ($scope) {});
+import './ctrl/NewCalveController'
 
 cattleBarn.controller("NewBullController", function ($scope, $window, $location) {
     $scope.bulls = {}; // model to hold form values
