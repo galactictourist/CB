@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+   <html lang="en" ng-app="cattleBarn">
+   <head>
+	<title>Bulls Medical Measurements</title> </head>
+	<body>
+
+	       <div class="container-fluid">
+	       <div style="padding-left:15px; font-size:larger;" class="row">
+	       		<strong>Editing Bull: {{bulls.name}}</strong>
+	       		</div>	
+		       <div class="row">
+			       	<ul class="nav nav-tabs">
+			       	  <li class="nav-item">
+					    <a class="nav-link" href="#/bulls/{{bullId}}">Home</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link " href="#/bulls/mortality/{{bullId}}">Mortality/Carcass</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link active" href="#/bulls/med-meas/{{bullId}}">Med/Measurements</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="#/bulls/offspring/{{bullId}}">Offspring</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link href="#">Breeding</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="#">EPD</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link href="#">Semen</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="#">Pics</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link href="#">Pedigree</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="#">Bloodlines</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link href="#">Show</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link href="#">Notes/Documents</a>
+					  </li>
+					</ul>
+				</div>
+				<div class="row">
+					 <div style="margin:15px;" class="container-fluid">
+	      			  <div style="font-size:larger; padding:5px; background-color:#eeeeee; margin-bottom:15px;" class="row">
+	      			  <span><strong>Medical & Measurements</strong></span>
+	      			  </div>
+	      			    <ul id="myTabs" class="nav nav-tabs" data-tabs="tabs">
+						  <li class="active"><a href="#medt" data-toggle="tab">Medical Treatments</a></li>
+						  <li><a href="#vm" data-toggle="tab">Vaccines & Wormers</a></li>
+						  <li><a href="#meas" data-toggle="tab">Measurements</a></li>
+						  <li><a href="#wg" data-toggle="tab">Weight Gains</a></li>
+						  <li><a href="#bcs" data-toggle="tab">Body Condition Scores</a></li>
+						  
+						</ul>
+
+						<div class="tab-content">
+						  <div id="medt" class="tab-pane fade in active">
+						    <h3>Medical Treatments</h3>
+						    <div style="margin-top:20px; border:1px solid #333333; padding:10px;" class="row">
+						    	<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Date
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.treatdate" name="medtreatdate">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Procedure
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.proc" name="medproc">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Meds
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.medication" name="medmedication">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Dosage
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.dosage" name="meddosage">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Lot #
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.lotnum" name="medlotnum">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Mfr.
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.manuf" name="medmanuf">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Done By
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.perfby" name="medperfby">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Location
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.loc" name="medloc">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Route
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.route" name="medroute">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Cost
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.cost" name="medcost">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Slaughter
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.slaughtdate" name="medslaughtdate">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Temp
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.temp" name="medtemp">
+				          			</div>
+				        		</div>
+				        		
+						    </div>
+						    <div style="background-color:#eeeeee; padding:10px;" class="row">
+				        			<div class="col-md-12">
+				        				<button ng-click="addMedTreat()" class="btn btn-default pull-right">Add New Treatment</button>
+				        			</div>
+				        	</div>
+						  
+						  <div style="margin-top:10px;" class="row">
+						  <div class="md-col-12">
+							<center>
+							<table style="padding:10px; width:100%;" class="table-striped table-bordered home-tayble">
+							  <thead>
+							    <tr>
+							      <th style="padding:10px;">Date</th>
+							      <th style="padding:10px;">Procedure</th> 
+							      <th style="padding:10px;">Meds</th>
+							      <th style="padding:10px;">Dosage</th>
+							      <th style="padding:10px;">Lot #</th>
+							      <th style="padding:10px;">Mfr.</th>
+							      <th style="padding:10px;">Done By</th>
+							      <th style="padding:10px;">Location</th>
+							      <th style="padding:10px;">Route</th>
+							      <th style="padding:10px;">Cost</th>
+							      <th style="padding:10px;">Slaughter</th>
+							      <th style="padding:10px;">Temp</th>
+							      <th style="padding:10px;"></th>
+							      <th style="padding:10px;"></th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr ng-repeat="med in medList">
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+							      <td style="padding:10px;">{{med.proc}}</td>
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+							      <td style="padding:10px;">{{med.proc}}</td>
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+							      <td style="padding:10px;">{{med.proc}}</td>
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+							      <td style="padding:10px;">{{med.proc}}</td>
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+							      <td style="padding:10px;">{{med.proc}}</td>
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+							      <td style="padding:10px;">{{med.proc}}</td>	
+							      <td style="padding:10px;"><button ng-click="deleteMedTreat()" class="btn btn-sm btn-default pull-right">Delete</button></td>
+							      <td style="padding:10px;"><button ng-click="editMedTreat()" class="btn btn-sm btn-default pull-right">Edit</button></td>		
+							    </tr> 
+							  </tbody>
+							</table>
+		                   </center>
+		                   </div>
+						</div>
+						</div>
+						  <div id="vm" class="tab-pane fade">
+						    <h3>Vaccines & Wormers</h3>
+						    <div style="margin-top:20px; border:1px solid #333333; padding:10px;" class="row">
+						    	<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Date
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.vacdate" name="vacdate">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Vaccine
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.vaccine" name="medvaccine">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Wormer
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.wormer" name="medwormer">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Dosage
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.vacdosage" name="medvacdosage">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Route
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.vacroute" name="medvacroute">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Mfr.
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.vacmanuf" name="medvacmanuf">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Done By
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.vacperfby" name="medvacperfby">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Location
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.vacloc" name="medvacloc">
+				          			</div>
+				        		</div>
+				        		
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Cost
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.vaccost" name="medvaccost">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Slaughter
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.vacslaughtdate" name="medsvaclaughtdate">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-2">
+				          			<div class="form-group">
+						            <label>
+						              Notes
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.vacnotes" name="medvacnotes">
+				          			</div>
+				        		</div>
+				        		
+						    </div>
+						    <div style="background-color:#eeeeee; padding:10px;" class="row">
+				        			<div class="col-md-12">
+				        				<button ng-click="addMedTreat()" class="btn btn-default pull-right">Add New Vaccine Record</button>
+				        			</div>
+				        	</div>
+						  
+						  <div style="margin-top:10px;" class="row">
+						  <div class="md-col-12">
+							<center>
+							<table style="padding:10px; width:100%;" class="table-striped table-bordered home-tayble">
+							  <thead>
+							    <tr>
+							      <th style="padding:10px;">Date</th>
+							      <th style="padding:10px;">Vaccine</th> 
+							      <th style="padding:10px;">Wormer</th>
+							      <th style="padding:10px;">Dosage</th>
+							      <th style="padding:10px;">Route</th>
+							      <th style="padding:10px;">Mfr.</th>
+							      <th style="padding:10px;">Done By</th>
+							      <th style="padding:10px;">Location</th>
+							     
+							      <th style="padding:10px;">Cost</th>
+							      <th style="padding:10px;">Slaughter</th>
+							      <th style="padding:10px;">Notes</th>
+							      <th style="padding:10px;"></th>
+							      <th style="padding:10px;"></th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr ng-repeat="med in medList">
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+							      <td style="padding:10px;">{{med.proc}}</td>
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+							      <td style="padding:10px;">{{med.proc}}</td>
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+							      <td style="padding:10px;">{{med.proc}}</td>
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+							      <td style="padding:10px;">{{med.proc}}</td>
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+							      <td style="padding:10px;">{{med.proc}}</td>
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+								
+							      <td style="padding:10px;"><button ng-click="deleteMedTreat()" class="btn btn-sm btn-default pull-right">Delete</button></td>
+							      <td style="padding:10px;"><button ng-click="editMedTreat()" class="btn btn-sm btn-default pull-right">Edit</button></td>		
+							    </tr> 
+							  </tbody>
+							</table>
+		                   </center>
+		                   </div>
+						  </div>
+						  </div>
+						  <div id="meas" class="tab-pane fade">
+						    <h3>Measurements</h3>
+						    <p>Some content in menu 2.</p>
+						  </div>
+						   <div id="wg" class="tab-pane fade">
+						    <h3>Weight Gains</h3>
+						    <div style="margin-top:20px; border:1px solid #333333; padding:10px;" class="row">
+						    	<div class="col-md-2">
+				          			<div class="form-group">
+						            <label>
+						              Measurement Date
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.weightmeasdate" name="medweightmeasdate">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-2">
+				          			<div class="form-group">
+						            <label>
+						              Weight
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.weightamount" name="medweightamount">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-2">
+				          			<div class="form-group">
+						            <label>
+						              Height
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.height" name="medheight">
+				          			</div>
+				        		</div>
+				        		
+				        		<div class="col-md-6">
+				          			<div class="form-group">
+						            <label>
+						              Comments
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.bcscomments" name="medbcscomments">
+				          			</div>
+				        		</div>
+				        		
+				        		
+						    </div>
+						    <div style="background-color:#eeeeee; padding:10px;" class="row">
+				        			<div class="col-md-12">
+				        				<button ng-click="addMedTreat()" class="btn btn-default pull-right">Add New Weight Record</button>
+				        			</div>
+				        	</div>
+						  
+						  <div style="margin-top:10px;" class="row">
+						  <div class="md-col-12">
+							<center>
+							<table style="padding:10px; width:100%;" class="table-striped table-bordered home-tayble">
+							  <thead>
+							    <tr>
+							      <th style="padding:10px;">Measurement Date</th>
+							      <th style="padding:10px;">Weight</th> 
+							      <th style="padding:10px;">Height</th>
+							      
+							      <th style="padding:10px;">Comments</th>
+							      
+							      <th style="padding:10px;"></th>
+							      <th style="padding:10px;"></th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr ng-repeat="med in medList">
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+							      <td style="padding:10px;">{{med.proc}}</td>
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+							      <td style="padding:10px;">{{med.proc}}</td>
+							    
+							     
+								
+							      <td style="padding:10px;"><button ng-click="deleteMedTreat()" class="btn btn-sm btn-default pull-right">Delete</button></td>
+							      <td style="padding:10px;"><button ng-click="editMedTreat()" class="btn btn-sm btn-default pull-right">Edit</button></td>		
+							    </tr> 
+							  </tbody>
+							</table>
+		                   </center>
+		                   </div>
+						  </div>
+						  </div>
+						   <div id="bcs" class="tab-pane fade">
+						    <h3>Body Condition Scores</h3>
+						   <div style="margin-top:20px; border:1px solid #333333; padding:10px;" class="row">
+						    	<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Date
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.bcsdate" name="medbcsdate">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              BCS Score
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.bcsscore" name="medbcsscore">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Weight
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.bcsweight" name="medbcsweight">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Soundness
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.bcssoundness" name="medbcssoundness">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						              Tooth Wear
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.bcstoothwear" name="medbcstoothwear">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-1">
+				          			<div class="form-group">
+						            <label>
+						             Temperment
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.bcstemp" name="medbcstemp">
+				          			</div>
+				        		</div>
+				        		<div class="col-md-6">
+				          			<div class="form-group">
+						            <label>
+						              Comments
+						            </label>
+						            <input type="text" class="form-control" ng-model="bulls.med.bcscomments" name="medbcscomments">
+				          			</div>
+				        		</div>
+				        		
+				        		
+						    </div>
+						    <div style="background-color:#eeeeee; padding:10px;" class="row">
+				        			<div class="col-md-12">
+				        				<button ng-click="addMedTreat()" class="btn btn-default pull-right">Add New BCS Record</button>
+				        			</div>
+				        	</div>
+						  
+						  <div style="margin-top:10px;" class="row">
+						  <div class="md-col-12">
+							<center>
+							<table style="padding:10px; width:100%;" class="table-striped table-bordered home-tayble">
+							  <thead>
+							    <tr>
+							      <th style="padding:10px;">Date</th>
+							      <th style="padding:10px;">BCS Score</th> 
+							      <th style="padding:10px;">Weight</th>
+							      <th style="padding:10px;">Soundness</th>
+							      <th style="padding:10px;">Tooth Wear</th>
+							      <th style="padding:10px;">Temperment</th>
+							      <th style="padding:10px;">Comments</th>
+							      
+							      <th style="padding:10px;"></th>
+							      <th style="padding:10px;"></th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr ng-repeat="med in medList">
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+							      <td style="padding:10px;">{{med.proc}}</td>
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+							      <td style="padding:10px;">{{med.proc}}</td>
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+							      <td style="padding:10px;">{{med.proc}}</td>
+							      <td style="padding:10px;">{{med.treatdate}}</td>
+							     
+								
+							      <td style="padding:10px;"><button ng-click="deleteMedTreat()" class="btn btn-sm btn-default pull-right">Delete</button></td>
+							      <td style="padding:10px;"><button ng-click="editMedTreat()" class="btn btn-sm btn-default pull-right">Edit</button></td>		
+							    </tr> 
+							  </tbody>
+							</table>
+		                   </center>
+		                   </div>
+						  </div>
+						</div>
+				      <!--<div class="row">
+				        <div class="col-md-2">
+				          <div class="form-group">
+				            <label>
+				              Date of Death
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.dateofdeath" name="dateofdeath">
+				          </div>
+				        </div>
+				        <div class="col-md-5">
+				          <div class="form-group">
+				            <label>
+				              Cause of Death
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.causeofdeath" name="causeofdeath">
+				          </div>
+				        </div>
+				        <div class="col-md-5">
+				          <div class="form-group">
+				            <label>
+				              Location
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.deathlocation" name="deathlocation">
+				          </div>
+				        </div>
+				        
+				      </div>
+				      
+				      <div class="row">
+					        <div class="col-md-10">
+					          <div class="form-group">
+					            <label>
+					              Symptoms
+					            </label>
+					            <input type="text" class="form-control" ng-model="bulls.deathsymptoms" id="deathsymptoms" name="deathsymptoms">
+					          </div>
+					        </div>
+					        <div class="col-md-2">
+					          <div class="form-group">
+					            <label>
+					              Policy Uploaded
+					            </label>
+					            <select class="form-control" id="policyupload" ng-model="bulls.deathpolicyupload" name="ddDeathPolicyUpload">
+					              <option value="1">
+					                Policy 1
+					              </option>
+					              <option value="2">
+					                Policy 2
+					              </option>
+					              <option value="3">
+					                Policy 3
+					              </option>
+					            </select>
+					          </div>
+					        </div>
+				      </div>
+				      <div class="row">
+				        <div class="col-md-2">
+				        	<div class="form-group">
+				        	<label>
+				              Insured
+				            </label><br>
+				          <label class="radio-inline">
+				            <input ng-model="bulls.deathinsured" value="No" type="radio">
+				            No
+				          </label>
+				          <label class="radio-inline">
+				            <input ng-model="bulls.deathinsured" value="Yes" type="radio">
+				            Yes
+				          </label>
+				          	</div>
+				        </div>
+				        
+				        <div class="col-md-4">
+				          <div class="form-group">
+				            <label>
+				              Insurance
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.deathinsurance" id="deathinsurance" name="deathinsurance">
+				          </div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Policy #
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.deathinsurancepolicynum" id="deathinsurancepolicynum" name="deathinsurancepolicynum">
+				          </div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Phone
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.deathinsurancephone" id="deathinsurancephone" name="deathinsurancephone">
+				          </div>
+				        </div>
+				      
+				      </div>
+				      <div class="row">
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Coverage Date
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.deathinsurancecovdate" name="deathinsurancecovdate" id="deathinsurancecovdate">
+				          </div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Coverage Amount
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.deahtinsurancecovamount" name="deathinsurancecovamount" id="deathinsurancecovamount">
+				          </div>
+				        </div>
+				        <div class="col-md-2">
+				          <div class="form-group">
+				            <label>
+				              Rate %
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.deathinsurancecovrate" name="deathinsurancecovrate" id="deathinsurancecovrate">
+				          </div>
+				        </div>
+				        <div class="col-md-2">
+				          <div class="form-group">
+				            <label>
+				              Premium
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.deathinsurancecovprem" name="deathinsurancecovprem" id="deathinsurancecovprem">
+				          </div>
+				        </div>
+				        <div class="col-md-2">
+				          <div class="form-group">
+				            <label>
+				              Term
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.deathinsurancecovterm" name="deathinsurancecovterm" id="deathinsurancecovterm">
+				          </div>
+				        </div>
+				      </div>
+				      <div class="row">
+				         <div class="col-md-2">
+				        	<div class="form-group">
+				        	<label>
+				              Autopsy
+				            </label><br>
+				          <label class="radio-inline">
+				            <input ng-model="bulls.deathautopsy" value="No" type="radio">
+				            No
+				          </label>
+				          <label class="radio-inline">
+				            <input ng-model="bulls.deathautopsy" value="Yes" type="radio">
+				            Yes
+				          </label>
+				          	</div>
+				        </div>
+				        <div class="col-md-7">
+				          <div class="form-group">
+				            <label>
+				              Results
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.deathautopsyresults" id="deathautopsyresults" name="deathautopsyresults">
+				          </div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Results Uploaded
+				            </label>
+				            <select class="form-control" ng-model="bulls.deathautopsyresultsupload" >
+				             <option value="1">
+				                Results 1
+				              </option>
+				              <option value="2">
+				                  Results 2
+				              </option>
+				              <option value="3">
+				                  Results 3
+				              </option>
+				            </select>
+				          </div>
+				        </div>
+				        
+				      </div>
+				      <div class="row">
+				        <div class="col-md-6">
+				          <div class="form-group">
+				            <label>
+				              Veterinarian
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.deathvet" id="deathvet" name="deathvet">
+				          </div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Vet Fee
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.deathvetfee" name="deathvetfee" id="deathvetfee">
+				          </div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Date
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.deathvetdate" name="deathvetdate" id="deathvetdate">
+				          </div>
+				        </div>
+				      </div>
+				      <div class="row">
+				        <div class="col-md-12">
+				          <div class="form-group">
+				            <label>
+				              Comments
+				            </label>
+				            <textarea ng-model="bulls.deathcomments" class="form-control"></textarea>
+				          </div>
+				        </div>
+				       
+				      </div>
+				      <div style="font-size:larger; padding:5px; background-color:#eeeeee; margin-bottom:15px;" class="row">
+	      			  <span><strong>Carcass</strong></span>
+	      			  </div>
+				      <div class="row">
+				         <div class="col-md-3">
+				        	<div class="form-group">
+				        	<label>
+				              Carcass Type
+				            </label><br>
+				          <label class="radio-inline">
+				            <input ng-model="bulls.carcasstype" value="actualkilldata" type="radio">
+				            Actual/Kill Data
+				          </label>
+				          <label class="radio-inline">
+				            <input ng-model="bulls.carcasstype" value="ultrasound" type="radio">
+				            Ultrasound
+				          </label>
+				          	</div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Kill Date
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.carcasskilldate">
+				          </div>
+				        </div>
+				        <div class="col-md-6">
+				          <div class="form-group">
+				            <label>
+				              Comment
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.carcasscomment">
+				          </div>
+				        </div>
+				        
+				      </div>
+				      <div class="row">
+				        <div class="col-md-6">
+				          <div class="form-group">
+				            <label>
+				              Processing Facility
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.carcassprocessfacility">
+				          </div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Feeder Weight
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.carcassfeederweight" name="">
+				          </div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Live Weight
+				            </label>
+				            <input type="text" class="form-control" ng-model="bulls.carcassliveweight" name="">
+				          </div>
+				        </div>
+				        
+				      </div>
+				      <div class="row">
+				        <div class="col-md-4">
+				          <div class="form-group">
+				            <label>
+				              Carcass Weight
+				            </label>
+				            <input type="text" ng-model="bulls.carcassweight" class="form-control">
+				          </div>
+				        </div>
+				        <div class="col-md-4">
+				          <div class="form-group">
+				            <label>
+				              Ribeye Area
+				            </label>
+				            <input type="text" ng-model="bulls.carcassribeyearea" class="form-control">
+				          </div>
+				        </div>
+				        <div class="col-md-4">
+				          <div class="form-group">
+				            <label>
+				              Ribeye Area/CWT
+				            </label>
+				            <input type="text" ng-model="bulls.carcassribeyeareacwt" class="form-control">
+				          </div>
+				        </div>
+				      </div>
+				      <div class="row">
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Fat Thickness
+				            </label>
+				            <input type="text" ng-model="bulls.carcassfatthickness" class="form-control">
+				          </div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Intramuscular Fat
+				            </label>
+				            <input type="text" ng-model="bulls.carcassintramuscfat" class="form-control">
+				          </div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Marbling
+				            </label>
+				            <input type="text" ng-model="bulls.carcassmarbling" class="form-control">
+				          </div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Frame Score
+				            </label>
+				            <input type="text" ng-model="bulls.carcassframescore" class="form-control">
+				          </div>
+				        </div>
+				      </div>
+				      <div class="row">
+				        
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Maturity
+				            </label>
+				            <input type="text" ng-model="bulls.carcassmaturity" class="form-control">
+				          </div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Quality Grade
+				            </label>
+				            <input type="text" ng-model="bulls.carcassqualitygrade" class="form-control">
+				          </div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Yield Grade
+				            </label>
+				            <input type="text" ng-model="bulls.carcassyieldgrade" class="form-control">
+				          </div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              PEN/LOT
+				            </label>
+				            <input type="text" ng-model="bulls.carcasspenlot" class="form-control">
+				          </div>
+				        </div>
+				      </div>
+				      <div class="row">
+				        <div class="col-md-4">
+				          <div class="form-group">
+				            <label>
+				              Tenderness
+				            </label>
+				            <input type="text" ng-model="bulls.carcasstenderness" class="form-control">
+				          </div>
+				        </div>
+				        <div class="col-md-4">
+				          <div class="form-group">
+				            <label>
+				              Carcass Value
+				            </label>
+				            <input type="text" ng-model="bulls.carcassvalue" class="form-control">
+				          </div>
+				        </div>
+				        <div class="col-md-4">
+				          <div class="form-group">
+				            <label>
+				              Dressing %
+				            </label>
+				            <input type="text" ng-model="bulls.carcassdressingperc" class="form-control">
+				          </div>
+				        </div>
+				      </div>
+				      <div class="row">
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Report #
+				            </label>
+				            <input type="text" ng-model="bulls.carcassreportnumber" class="form-control">
+				          </div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Carcass #
+				            </label>
+				            <input type="text" ng-model="bulls.carcassnumber" class="form-control">
+				          </div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Lot #
+				            </label>
+				            <input type="text" ng-model="bulls.carcasslotnumber" class="form-control">
+				          </div>
+				        </div>
+				        <div class="col-md-3">
+				          <div class="form-group">
+				            <label>
+				              Days on Feed
+				            </label>
+				            <input type="text" ng-model="bulls.carcassdaysonfeed" class="form-control">
+				          </div>
+				        </div>
+				      </div>
+				      <div class="row">
+				        <div class="col-md-6">
+				          <div class="form-group">
+				            <label>
+				              Comments
+				            </label>
+				            <textarea ng-model="bulls.comments" class="form-control"></textarea>
+				          </div>
+				        </div>
+				        <div class="col-md-6">
+				          <div class="row">
+				              <div class="col-md-2">
+				               <button ng-click="save()" class="btn btn-default">Save</button>
+				              </div>
+				              <div class="col-md-2">
+				               <button ng-click="cancel()" class="btn btn-default">Cancel</button>
+				              </div>
+				              <div class="col-md-2">
+				                <button ng-click="clear()" class="btn btn-default">Clear</button>
+				              </div>
+				           </div>
+				        </div>
+				      </div>-->
+    				</div><!--container-->
+				</div>
+		</div>
+
+			
+	 </body>
+
+</html>

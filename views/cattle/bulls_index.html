@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+   <html lang="en" ng-app="cattleBarn">
+   <head>
+	<title>Bulls</title> </head>
+	<body>
+
+	       <div class="container-fluid">
+	       
+				<div class="row">
+					<div class="col-md-2"><h3>Bulls</h3><br><br></div>
+				</div>
+			<div class="row">
+			
+					<table style="margin-left:50px; padding:10px;" class="table-striped table-bordered home-tayble">
+					  <thead>
+					    <tr>
+					      <th style="padding:10px;">Name/ID</th>
+					      <th style="padding:10px;">Status</th> 
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr ng-repeat="bull in bullList">
+					      <td style="padding:10px;"><a href="#/bulls/{{bull._id}}">{{bull.name}}</a></td>
+					      <td style="padding:10px;">{{bull.status}}</td>
+					    </tr> 
+					  </tbody>
+					</table>
+                   
+			</div>
+	</body>
+
+</html>

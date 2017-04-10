@@ -1,8 +1,18 @@
 
 
+
 var app = require('electron').app;  // Module to control application life.
+
+
 var BrowserWindow = require('electron').BrowserWindow;  // Module to create native browser window.
 
+var debug = false;
+if (process.argv[2] == 'debug') {
+    debug = true;
+    let reload = require('electron-reload');
+    reload(`${__dirname}/js`)
+    reload(`${__dirname}/views`)
+}
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -22,7 +32,19 @@ app.on('window-all-closed', function() {
 // initialization and is ready to create browser windows.
 app.on('ready', function() {
     // Create the browser window.
-    mainWindow = new BrowserWindow({ minWidth: 1024, minHeight: 768 });
+    mainWindow = new BrowserWindow({ 
+        width: 1324,
+        height: 968,
+        title: 'Cattle Barn 1.0',
+        backgroundColor: '#555555',
+        useContentSize: true 
+
+
+         });
+
+    if (debug) {
+        mainWindow.webContents.openDevTools()
+    }
 
     // and load the index.html of the app.
     mainWindow.loadURL('file://' + __dirname + '/main.html');
