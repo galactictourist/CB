@@ -1,13 +1,15 @@
+<!DOCTYPE html>
+   <html lang="en" ng-app="cattleBarn">
+   <head>
+	<title>Ranch Info</title> </head>
+	<body>
 
-<div class="container-fluid" ng-app="cattleBarn" ng-controller="NewRanchController">
-
-<h2>New ranch registration</h2>
-
-<div class="row">
+	       <div class="container-fluid">
+			<div class="row">
         <div class="col-sm-4">
           <div class="form-group">
             <label>
-              Ranch Name
+              Ranch Name {{ranch.ranchname}}
             </label>
             <input type="text" class="form-control" ng-model="ranch.ranchname" name="ranch-name">
           </div>
@@ -112,31 +114,31 @@
               <label class="radio">
                 Commercial
               </label>
-              <input name="ranchtype" value="commercial" ng-change="ranchTypeCheck(ranch.ranchtype)" ng-model="ranch.ranchtype" type="radio">
+              <input name="ranchtype" value="commercial"  ng-model="ranch.ranchtype" type="radio">
             </div>
             <div class="col-sm-4">
               <label class="radio">
                 Registered
               </label>
-              <input name="ranchtype" ng-change="ranchTypeCheck(ranch.ranchtype)" value="registered" ng-model="ranch.ranchtype" type="radio">
+              <input name="ranchtype"  value="registered" ng-model="ranch.ranchtype" type="radio">
             </div>
             <div class="col-sm-4">
               <label class="radio">
                 Both
               </label>
-              <input name="ranchtype" ng-change="ranchTypeCheck(ranch.ranchtype)" value="both" ng-model="ranch.ranchtype" type="radio">
+              <input name="ranchtype"  value="both" ng-model="ranch.ranchtype" type="radio">
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-          <div style="border: 1px solid #eee; margin:5px;" class="col-sm-5" ng-show="checkBreedAss(1)">
+          <div style="border: 1px solid #eee; margin:5px;" class="col-sm-5">
             Registered Breed Association 1
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label>Name</label>
-                     <input type="text" class="form-control" ng-model="breedass[0].name" name="breedassname">
+                     <input type="text" class="form-control" ng-model="ranch.breedass[0].name" name="breedassname">
                   </div> 
    
                 </div>
@@ -145,7 +147,7 @@
                     <label>
                       Membership #
                     </label>
-                    <input type="text" class="form-control" ng-model="breedass[0].memnum" name="breedassmemnum">
+                    <input type="text" class="form-control" ng-model="ranch.breedass[0].memnum" name="breedassmemnum">
                   </div>
                 </div>
               </div>
@@ -153,7 +155,7 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label>Address</label>
-                     <input type="text" class="form-control" ng-model="breedass[0].address" name="breedassaddress">
+                     <input type="text" class="form-control" ng-model="ranch.breedass[0].address" name="breedassaddress">
                   </div> 
    
                 </div>
@@ -162,7 +164,7 @@
                     <label>
                       County
                     </label>
-                    <input type="text" class="form-control" ng-model="breedass[0].county" name="breedasscounty">
+                    <input type="text" class="form-control" ng-model="ranch.breedass[0].county" name="breedasscounty">
                   </div>
                 </div>
               </div>
@@ -170,7 +172,7 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label>City</label>
-                     <input type="text" class="form-control" ng-model="breedass[0].city" name="breedasscity">
+                     <input type="text" class="form-control" ng-model="ranch.breedass[0].city" name="breedasscity">
                   </div> 
    
                 </div>
@@ -179,7 +181,7 @@
                     <label>
                       State
                     </label>
-                    <input type="text" class="form-control" ng-model="breedass[0].state" name="breedassmemnum">
+                    <input type="text" class="form-control" ng-model="ranch.breedass[0].state" name="breedassmemnum">
                   </div>
                 </div>
                 <div class="col-sm-4">
@@ -187,7 +189,7 @@
                     <label>
                       Zip
                     </label>
-                    <input type="text" class="form-control" ng-model="breedass[0].zip" name="breedasszip">
+                    <input type="text" class="form-control" ng-model="ranch.breedass[0].zip" name="breedasszip">
                   </div>
                 </div>
               </div>
@@ -195,7 +197,7 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label>Phone</label>
-                     <input type="text" class="form-control" ng-model="breedass[0].phone" name="breedassphone">
+                     <input type="text" class="form-control" ng-model="ranch.breedass[0].phone" name="breedassphone">
                   </div> 
    
                 </div>
@@ -204,7 +206,7 @@
                     <label>
                       Fax
                     </label>
-                    <input type="text" class="form-control" ng-model="breedass[0].fax" name="breedassfax">
+                    <input type="text" class="form-control" ng-model="ranch.breedass[0].fax" name="breedassfax">
                   </div>
                 </div>
               </div>
@@ -212,7 +214,7 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label>Email</label>
-                     <input type="text" class="form-control" ng-model="breedass[0].email" name="breedassemail">
+                     <input type="text" class="form-control" ng-model="ranch.breedass[0].email" name="breedassemail">
                   </div> 
    
                 </div>
@@ -221,7 +223,7 @@
                     <label>
                       Website
                     </label>
-                    <input type="text" class="form-control" ng-model="breedass[0].website" name="breedasswebsite">
+                    <input type="text" class="form-control" ng-model="ranch.breedass[0].website" name="breedasswebsite">
                   </div>
                 </div>
               </div>
@@ -229,7 +231,7 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label>Dues Cost</label>
-                     <input type="text" class="form-control" ng-model="breedass[0].duescost" name="breedassduescost">
+                     <input type="text" class="form-control" ng-model="ranch.breedass[0].duescost" name="breedassduescost">
                   </div> 
    
                 </div>
@@ -237,23 +239,23 @@
                   <label class="radio">
                   Annual
                   </label>
-                  <input name="duestype" value="annual" ng-model="breedass[0].duestype" type="radio">
+                  <input name="duestype" value="annual" ng-model="ranch.breedass[0].duestype" type="radio">
                 </div>
                 <div class="col-sm-3">
                  <label class="radio">
                   Semi-Annual
                   </label>
-                  <input name="duestype" value="semiannual" ng-model="breedass[0].duestype" type="radio">
+                  <input name="duestype" value="semiannual" ng-model="ranch.breedass[0].duestype" type="radio">
                 </div>
               </div>
            </div>
-           <div style="border: 1px solid #eee; margin:5px;" class="col-sm-5" ng-show="checkBreedAss(2)">
+           <div style="border: 1px solid #eee; margin:5px;" class="col-sm-5">
             Registered Breed Association 2
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label>Name</label>
-                     <input type="text" class="form-control" ng-model="breedass[1].name" name="breedassname">
+                     <input type="text" class="form-control" ng-model="ranch.breedass[1].name" name="breedassname">
                   </div> 
    
                 </div>
@@ -262,7 +264,7 @@
                     <label>
                       Membership #
                     </label>
-                    <input type="text" class="form-control" ng-model="breedass[1].memnum" name="breedassmemnum">
+                    <input type="text" class="form-control" ng-model="ranch.breedass[1].memnum" name="breedassmemnum">
                   </div>
                 </div>
               </div>
@@ -270,7 +272,7 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label>Address</label>
-                     <input type="text" class="form-control" ng-model="breedass[1].address" name="breedassaddress">
+                     <input type="text" class="form-control" ng-model="ranch.breedass[1].address" name="breedassaddress">
                   </div> 
    
                 </div>
@@ -279,7 +281,7 @@
                     <label>
                       County
                     </label>
-                    <input type="text" class="form-control" ng-model="breedass[1].county" name="breedasscounty">
+                    <input type="text" class="form-control" ng-model="ranch.breedass[1].county" name="breedasscounty">
                   </div>
                 </div>
               </div>
@@ -287,7 +289,7 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label>City</label>
-                     <input type="text" class="form-control" ng-model="breedass[1].city" name="breedasscity">
+                     <input type="text" class="form-control" ng-model="ranch.breedass[1].city" name="breedasscity">
                   </div> 
    
                 </div>
@@ -296,7 +298,7 @@
                     <label>
                       State
                     </label>
-                    <input type="text" class="form-control" ng-model="breedass[1].state" name="breedassmemnum">
+                    <input type="text" class="form-control" ng-model="ranch.breedass[1].state" name="breedassmemnum">
                   </div>
                 </div>
                 <div class="col-sm-4">
@@ -304,7 +306,7 @@
                     <label>
                       Zip
                     </label>
-                    <input type="text" class="form-control" ng-model="breedass[1].zip" name="breedasszip">
+                    <input type="text" class="form-control" ng-model="ranch.breedass[1].zip" name="breedasszip">
                   </div>
                 </div>
               </div>
@@ -312,7 +314,7 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label>Phone</label>
-                     <input type="text" class="form-control" ng-model="breedass[1].phone" name="breedassphone">
+                     <input type="text" class="form-control" ng-model="ranch.breedass[1].phone" name="breedassphone">
                   </div> 
    
                 </div>
@@ -321,7 +323,7 @@
                     <label>
                       Fax
                     </label>
-                    <input type="text" class="form-control" ng-model="breedass[1].fax" name="breedassfax">
+                    <input type="text" class="form-control" ng-model="ranch.breedass[1].fax" name="breedassfax">
                   </div>
                 </div>
               </div>
@@ -329,7 +331,7 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label>Email</label>
-                     <input type="text" class="form-control" ng-model="breedass[1].email" name="breedassemail">
+                     <input type="text" class="form-control" ng-model="ranch.breedass[1].email" name="breedassemail">
                   </div> 
    
                 </div>
@@ -338,7 +340,7 @@
                     <label>
                       Website
                     </label>
-                    <input type="text" class="form-control" ng-model="breedass[1].website" name="breedasswebsite">
+                    <input type="text" class="form-control" ng-model="ranch.breedass[1].website" name="breedasswebsite">
                   </div>
                 </div>
               </div>
@@ -346,7 +348,7 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label>Dues Cost</label>
-                     <input type="text" class="form-control" ng-model="breedass[1].duescost" name="breedassduescost">
+                     <input type="text" class="form-control" ng-model="ranch.breedass[1].duescost" name="breedassduescost">
                   </div> 
    
                 </div>
@@ -354,13 +356,13 @@
                   <label class="radio">
                   Annual
                   </label>
-                  <input name="duestype" value="annual" ng-model="breedass[1].duestype" type="radio">
+                  <input name="duestype" value="annual" ng-model="ranch.breedass[1].duestype" type="radio">
                 </div>
                 <div class="col-sm-3">
                  <label class="radio">
                   Semi-Annual
                   </label>
-                  <input name="duestype" value="semiannual" ng-model="breedass[1].duestype" type="radio">
+                  <input name="duestype" value="semiannual" ng-model="ranch.breedass[1].duestype" type="radio">
                 </div>
               </div>
            </div>
@@ -374,17 +376,21 @@
       </div>
       <div class="row" style="padding:15px; background-color:#eee;">
         <div class="col-sm-9">
-        <button ng-click="addRegBreedAss()" ng-show="showRegBreedAss > 0" class="btn btn-primary pull-right">Add another breed association</button>
+        <button  class="btn btn-primary pull-right">Button</button>
            
         </div>
         <div class="col-sm-1">
        
-            <button ng-click="save()" class="btn btn-warning pull-right">Save</button>
+            <button  class="btn btn-warning pull-right">Save</button>
         </div>
          <div class="col-sm-1">
        
-            <button ng-click="clear()" class="btn btn-default pull-right">Clear</button>
+            <button  class="btn btn-default pull-right">Clear</button>
         </div>
       </div>
 
 </div>
+
+	 </body>
+
+</html>
