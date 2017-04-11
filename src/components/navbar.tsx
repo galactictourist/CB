@@ -28,6 +28,10 @@ export default class extends React.Component<P, S> {
         cattleOpen: false
     }
 
+    toggleMain = () => {
+        this.setState({ open: !this.state.open })
+    }
+
     get cattleDropdown() {
         return <NavDropdown
             isOpen={this.state.cattleOpen}
@@ -54,9 +58,7 @@ export default class extends React.Component<P, S> {
             <Navbar color='faded' light toggleable>
                 <NavbarToggler
                     right
-                    onClick={event => {
-                        this.setState({ open: !this.state.open })
-                    }}
+                    onClick={this.toggleMain}
                 />
                 <NavbarBrand>Cattle Barn</NavbarBrand>
                 <Collapse isOpen={s.open} navbar>
