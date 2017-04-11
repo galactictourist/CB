@@ -32,14 +32,16 @@ export default class extends React.Component<P, S> {
         this.setState({ open: !this.state.open })
     }
 
+    toggleCattle = () => {
+        this.setState({
+            cattleOpen: !this.state.cattleOpen
+        })
+    }
+
     get cattleDropdown() {
         return <NavDropdown
             isOpen={this.state.cattleOpen}
-            toggle={() => {
-                this.setState({
-                    cattleOpen: !this.state.cattleOpen
-                })
-            }}>
+            toggle={this.toggleCattle}>
             <DropdownToggle caret>Cattle</DropdownToggle>
             <DropdownMenu>
                 <DropdownItem>Bulls</DropdownItem>
