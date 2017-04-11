@@ -12,6 +12,7 @@
   "devDependencies": {
     "electron": "^1.6.2",
     "electron-packager": "^8.6.0",
+    "electron-react-devtools": "^0.4.0",
     "electron-reload": "^1.1.0"
   },
   "dependencies": {

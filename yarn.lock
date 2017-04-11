@@ -424,6 +424,10 @@ electron-packager@^8.6.0:
     sanitize-filename "^1.6.0"
     semver "^5.3.0"
 
+electron-react-devtools@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/electron-react-devtools/-/electron-react-devtools-0.4.0.tgz#06bd04d8e232b20703d059f5560a6f2a838bc163"
+
 electron-reload@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/electron-reload/-/electron-reload-1.1.0.tgz#be9e69e01076b5cd09d1ab2fb7d51c0e76737269"
