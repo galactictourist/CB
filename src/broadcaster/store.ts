@@ -1,6 +1,6 @@
 import Broadcaster from './broadcaster'
 
-export class Store<T> extends Broadcaster<T> {
+export default class Store<T> extends Broadcaster<T> {
     constructor(
         protected storedValue: T = null
     ) {
