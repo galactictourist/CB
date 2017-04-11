@@ -42,7 +42,7 @@ export default class extends React.Component<P, S> {
         return <NavDropdown
             isOpen={this.state.cattleOpen}
             toggle={this.toggleCattle}>
-            <DropdownToggle caret>Cattle</DropdownToggle>
+            <DropdownToggle nav caret>Cattle</DropdownToggle>
             <DropdownMenu>
                 <DropdownItem>Bulls</DropdownItem>
                 <DropdownItem>Cows</DropdownItem>
