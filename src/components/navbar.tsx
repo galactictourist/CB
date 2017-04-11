@@ -7,7 +7,11 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink
+    NavLink,
+    NavDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem
 } from 'reactstrap'
 
 interface P {
@@ -15,11 +19,13 @@ interface P {
 
 interface S {
     open: boolean
+    cattleOpen: boolean
 }
 
 export default class extends React.Component<P, S> {
     state = {
-        open: false
+        open: false,
+        cattleOpen: false
     }
 
     toggle() {
@@ -28,9 +34,42 @@ export default class extends React.Component<P, S> {
         })
     }
 
+    get cattleDropdown() {
+        return <NavDropdown
+            isOpen={this.state.cattleOpen}
+            toggle={() => {
+                this.setState({
+                    cattleOpen: !this.state.cattleOpen
+                })
+            }}>
+            <DropdownToggle caret>Cattle</DropdownToggle>
+            <DropdownMenu>
+                <DropdownItem>Bulls</DropdownItem>
+                <DropdownItem>Cows</DropdownItem>
+                <DropdownItem>Calves</DropdownItem>
+                <DropdownItem>Steers</DropdownItem>
+                <DropdownItem>Heifers</DropdownItem>
+                <DropdownItem>All</DropdownItem>
+            </DropdownMenu>
+        </NavDropdown>
+    }
+
     render() {
+        const s = this.state
         return (
             <Navbar color='faded' light toggleable>
+                <NavbarToggler
+                    right
+                    onClick={event => {
+                        this.toggle()
+                    }}
+                />
+                <NavbarBrand>Cattle Barn</NavbarBrand>
+                <Collapse isOpen={s.open} navbar>
+                    <Nav>
+                        {this.cattleDropdown}
+                    </Nav>
+                </Collapse>
             </Navbar>
         )
     }
