@@ -10,11 +10,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "electron": "^1.6.2",
     "electron-packager": "^7.0.4"
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "electron": "^1.6.2",
     "level-js": "^2.2.4",
     "linvodb3": "^3.25.0",
     "q": "^1.4.1"
