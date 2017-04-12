@@ -14,8 +14,8 @@ import {
     RanchInfo as S
 } from '../types'
 import {
-    ranchInfoSave
-} from '../actions'
+    ranchInfo
+} from '../stores'
 
 interface P {
 }
@@ -44,7 +44,7 @@ export default class NewRanch extends React.Component<P, S> {
     }
 
     save() {
-        ranchInfoSave.trigger(this.state)
+        ranchInfo.value = this.state
     }
 
     render() {
