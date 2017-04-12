@@ -36,6 +36,7 @@
     "react-addons-css-transition-group": "^15.5.2",
     "react-addons-transition-group": "^15.5.2",
     "react-dom": "15.0",
-    "reactstrap": "^4.5.0"
+    "reactstrap": "^4.5.0",
+    "sqlite": "^2.5.0"
   }
 }
