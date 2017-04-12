@@ -10,23 +10,11 @@ import {
     Button
 } from 'reactstrap'
 
-interface P {
-}
+import {
+    RanchInfo as S
+} from '../types'
 
-interface S {
-    ranchName: string
-    ranchOwner: string
-    phone: string
-    address: string
-    city: string
-    state: string
-    zip: string
-    premisesId: string
-    taxExempt: string
-    timber: string
-    email: string
-    website: string
-    ranchType: string
+interface P {
 }
 
 export default class NewRanch extends React.Component<P, S> {
