@@ -13,6 +13,9 @@ import {
 import {
     RanchInfo as S
 } from '../types'
+import {
+    ranchInfoSave
+} from '../actions'
 
 interface P {
 }
@@ -38,6 +41,10 @@ export default class NewRanch extends React.Component<P, S> {
 
     reset = () => {
         this.setState(startState)
+    }
+
+    save() {
+        ranchInfoSave.trigger(this.state)
     }
 
     render() {
@@ -220,6 +227,7 @@ export default class NewRanch extends React.Component<P, S> {
                         children='Save'
                         color='warning'
                         className='float-sm-right'
+                        onClick={() => { this.save() }}
                     />
                 </Col>
                 <Col sm={1}>
