@@ -13,6 +13,7 @@
   "devDependencies": {
     "@types/bootstrap": "^3.3.32",
     "@types/jquery": "^2.0.41",
+    "@types/node": "^7.0.12",
     "@types/q": "^1.0.0",
     "@types/react": "^15.0.21",
     "@types/react-addons-css-transition-group": "^15.0.1",
