@@ -205,7 +205,14 @@ export default class NewRanch extends React.Component<P, S> {
                 </Col>
                 <Col sm={4}>
                     <Label for='ranch-type'>Ranch Type</Label>
-                    <Input type='select'>
+                    <Input type='select'
+                        value={s.ranchType}
+                        onChange={event => {
+                            this.setState({
+                                ranchType: event.target.value
+                            })
+                        }}>
+                        <option value=''>--Select--</option>
                         <option>Commercial</option>
                         <option>Registered</option>
                         <option>Both</option>
