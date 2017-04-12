@@ -3,4 +3,4 @@ import {
     RanchInfo
 } from './types'
 
-const ranchInfoSave = new Action<RanchInfo>()
+export const ranchInfoSave = new Action<RanchInfo>()
