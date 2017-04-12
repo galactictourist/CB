@@ -46,6 +46,24 @@ export default class NewRanch extends React.Component<P, S> {
         ranchType: '',
     }
 
+    reset = () => {
+        this.setState({
+            ranchName: '',
+            ranchOwner: '',
+            phone: '',
+            address: '',
+            city: '',
+            state: '',
+            zip: '',
+            premisesId: '',
+            taxExempt: '',
+            timber: '',
+            email: '',
+            website: '',
+            ranchType: '',
+        })
+    }
+
     render() {
         const s = this.state
 
@@ -233,6 +251,7 @@ export default class NewRanch extends React.Component<P, S> {
                         children='Clear'
                         color='default'
                         className='float-sm-left'
+                        onClick={this.reset}
                     />
                 </Col>
             </Row>
