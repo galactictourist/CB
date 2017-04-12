@@ -22,7 +22,7 @@ interface S {
     cattleOpen: boolean
 }
 
-export default class extends React.Component<P, S> {
+export default class NavBar extends React.Component<P, S> {
     state = {
         open: false,
         cattleOpen: false
