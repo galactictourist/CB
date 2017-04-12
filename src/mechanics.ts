@@ -14,7 +14,12 @@ namespace Configs {
 
 exists('./config', configExists => {
     if (!configExists) {
-        mkdir('./config')
+        mkdir('./config', (err) => {
+            if (err) {
+                alert('App cannot start')
+                console.error(err)
+            }
+        })
     }
 })
 
