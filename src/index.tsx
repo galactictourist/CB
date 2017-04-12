@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { render } from 'react-dom'
 
+import './mechanics'
+
 import NavBar from './components/navbar'
 
 interface P { }
