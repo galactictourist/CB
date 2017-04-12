@@ -4,13 +4,15 @@ import {
     Table,
 } from 'reactstrap'
 
+import Component from './'
+
 interface P {
 }
 
 interface S {
 }
 
-export default class HomeView extends React.Component<P, S> {
+export default class HomeView extends Component<P, S> {
     get head() {
         return <thead>
             <th>Type</th>

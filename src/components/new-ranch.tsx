@@ -10,6 +10,7 @@ import {
     Button
 } from 'reactstrap'
 
+import Component from './'
 import {
     RanchInfo as S
 } from '../types'
@@ -36,7 +37,7 @@ const startState: S = {
     ranchType: '',
 }
 
-export default class NewRanch extends React.Component<P, S> {
+export default class NewRanch extends Component<P, S> {
     state = startState
 
     reset = () => {
