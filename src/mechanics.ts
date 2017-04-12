@@ -7,9 +7,13 @@ import {
 import * as actions from './actions'
 import * as stores from './stores'
 
-exists('./config/app.json', configExists => {
+namespace Configs {
+    export const APP = './config/app.json'
+}
+
+exists(Configs.APP, configExists => {
     if (configExists) {
-        readFile('./config/app.json', 'utf-8', (err, file) => {
+        readFile(Configs.APP, 'utf-8', (err, file) => {
             if (err) {
                 console.error(err)
             } else {
@@ -22,7 +26,7 @@ exists('./config/app.json', configExists => {
 
 stores.ranchInfo.subscribe(value => {
     var jsonValues = JSON.stringify(value, null, 2)
-    writeFile('./config/app.json', jsonValues, (err) => {
+    writeFile(Configs.APP, jsonValues, (err) => {
         if (err) {
             console.error(err)
             alert('Failed to save')
