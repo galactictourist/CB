@@ -14,9 +14,38 @@ interface P {
 }
 
 interface S {
+    ranchName: string
+    ranchOwner: string
+    phone: string
+    address: string
+    city: string
+    state: string
+    zip: string
+    premisesId: string
+    taxExempt: string
+    timber: string
+    email: string
+    website: string
+    ranchType: string
 }
 
 export default class NewRanch extends React.Component<P, S> {
+    state = {
+        ranchName: '',
+        ranchOwner: '',
+        phone: '',
+        address: '',
+        city: '',
+        state: '',
+        zip: '',
+        premisesId: '',
+        taxExempt: '',
+        timber: '',
+        email: '',
+        website: '',
+        ranchType: '',
+    }
+
     render() {
         return <Container fluid>
             <h2>New Ranch Register</h2>
