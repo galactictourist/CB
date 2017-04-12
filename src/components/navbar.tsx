@@ -21,6 +21,7 @@ interface S {
     open: boolean
     cattleOpen: boolean
     addOpen: boolean
+    adminOpen: boolean
 }
 
 export default class NavBar extends React.Component<P, S> {
@@ -28,6 +29,7 @@ export default class NavBar extends React.Component<P, S> {
         open: false,
         cattleOpen: false,
         addOpen: false,
+        adminOpen: false
     }
 
     toggleMain = () => {
@@ -43,6 +45,12 @@ export default class NavBar extends React.Component<P, S> {
     toggleAdd = () => {
         this.setState({
             addOpen: !this.state.addOpen
+        })
+    }
+
+    toggleAdmin = () => {
+        this.setState({
+            adminOpen: !this.state.adminOpen
         })
     }
 
@@ -75,6 +83,22 @@ export default class NavBar extends React.Component<P, S> {
         </NavDropdown>
     }
 
+    get adminDropdown() {
+        return <NavDropdown isOpen={this.state.adminOpen}
+            toggle={this.toggleAdmin}>
+            <DropdownToggle nav caret>Admin</DropdownToggle>
+            <DropdownMenu>
+                <DropdownItem>Ranch Info</DropdownItem>
+                <DropdownItem>Settings</DropdownItem>
+                <DropdownItem>Contacts</DropdownItem>
+                <DropdownItem>Reports</DropdownItem>
+                <DropdownItem>Equipment &#38; Inventory</DropdownItem>
+                <DropdownItem>Pastures &#38; Pens</DropdownItem>
+                <DropdownItem>Pedigrees</DropdownItem>
+            </DropdownMenu>
+        </NavDropdown>
+    }
+
     render() {
         const s = this.state
         return (
@@ -88,6 +112,7 @@ export default class NavBar extends React.Component<P, S> {
                     <Nav className='nav-right'>
                         {this.cattleDropdown}
                         {this.addDropdown}
+                        {this.adminDropdown}
                     </Nav>
                 </Collapse>
             </Navbar>
