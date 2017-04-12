@@ -17,39 +17,27 @@ import {
 interface P {
 }
 
+const startState: S = {
+    ranchName: '',
+    ranchOwner: '',
+    phone: '',
+    address: '',
+    city: '',
+    state: '',
+    zip: '',
+    premisesId: '',
+    taxExempt: '',
+    timber: '',
+    email: '',
+    website: '',
+    ranchType: '',
+}
+
 export default class NewRanch extends React.Component<P, S> {
-    state = {
-        ranchName: '',
-        ranchOwner: '',
-        phone: '',
-        address: '',
-        city: '',
-        state: '',
-        zip: '',
-        premisesId: '',
-        taxExempt: '',
-        timber: '',
-        email: '',
-        website: '',
-        ranchType: '',
-    }
+    state = startState
 
     reset = () => {
-        this.setState({
-            ranchName: '',
-            ranchOwner: '',
-            phone: '',
-            address: '',
-            city: '',
-            state: '',
-            zip: '',
-            premisesId: '',
-            taxExempt: '',
-            timber: '',
-            email: '',
-            website: '',
-            ranchType: '',
-        })
+        this.setState(startState)
     }
 
     render() {
