@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron .",
     "start-dev": "electron . debug & tsc -w",
-    "package": "electron-packager ./ cattlebarn --all --out build --overwrite"
+    "package": "electron-packager ./ cattlebarn --all --asar --out build --overwrite"
   },
   "author": "",
   "license": "ISC",
