@@ -1,7 +1,8 @@
 import {
     exists,
     readFile,
-    writeFile
+    writeFile,
+    mkdir
 } from 'fs'
 
 import * as actions from './actions'
@@ -10,6 +11,12 @@ import * as stores from './stores'
 namespace Configs {
     export const APP = './config/app.json'
 }
+
+exists('./config', configExists => {
+    if (!configExists) {
+        mkdir('./config')
+    }
+})
 
 exists(Configs.APP, configExists => {
     if (configExists) {
