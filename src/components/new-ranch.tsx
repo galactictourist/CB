@@ -219,6 +219,23 @@ export default class NewRanch extends React.Component<P, S> {
                     </Input>
                 </Col>
             </Row>
+            <Row>
+                <Col sm={10} />
+                <Col sm={1}>
+                    <Button
+                        children='Save'
+                        color='warning'
+                        className='float-sm-right'
+                    />
+                </Col>
+                <Col sm={1}>
+                    <Button
+                        children='Clear'
+                        color='default'
+                        className='float-sm-left'
+                    />
+                </Col>
+            </Row>
         </Container>
     }
 }
