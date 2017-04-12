@@ -113,6 +113,12 @@ export default class NavBar extends React.Component<P, S> {
                         {this.cattleDropdown}
                         {this.addDropdown}
                         {this.adminDropdown}
+                        <NavItem>
+                            <NavLink>Check DB</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink>Clear DB</NavLink>
+                        </NavItem>
                     </Nav>
                 </Collapse>
             </Navbar>
