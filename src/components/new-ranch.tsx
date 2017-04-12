@@ -40,6 +40,12 @@ const startState: S = {
 export default class NewRanch extends Component<P, S> {
     state = startState
 
+    componentWillMount() {
+        this.subscribe(ranchInfo, state => {
+            this.setState(state)
+        })
+    }
+
     reset = () => {
         this.setState(startState)
     }
