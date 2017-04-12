@@ -67,7 +67,7 @@ export default class HomeView extends React.Component<P, S> {
 
     render() {
         return <Container fluid>
-            <h1>Welcome to Cattle Barn</h1>
+            <h2>Welcome to Cattle Barn</h2>
             <Table bordered>
                 {this.head}
                 <tbody>
