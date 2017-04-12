@@ -17,3 +17,15 @@ exists('./config/app.json', configExists => {
         }
     })
 })
+
+stores.ranchInfo.subscribe(value => {
+    var jsonValues = JSON.stringify(value, null, 2)
+    writeFile('./config/app.json', jsonValues, (err) => {
+        if (err) {
+            console.error(err)
+            alert('Failed to save')
+        } else {
+            alert('Info Saved')
+        }
+    })
+})
