@@ -109,7 +109,7 @@ export default class NavBar extends React.Component<P, S> {
                 />
                 <NavbarBrand>Cattle Barn</NavbarBrand>
                 <Collapse isOpen={s.open} navbar>
-                    <Nav className='nav-right'>
+                    <Nav>
                         {this.cattleDropdown}
                         {this.addDropdown}
                         {this.adminDropdown}
