@@ -130,11 +130,13 @@ export default class NavBar extends React.Component<P, S> {
                     }}
                 >Cattle Barn</NavbarBrand>
                 <Collapse isOpen={s.open} navbar>
-                    <Nav navbar>
+                    <Nav navbar className='mr-auto'>
                         {this.cattleDropdown}
                         {this.addDropdown}
                         {this.adminDropdown}
-                        <NavItem>
+                    </Nav>
+                    <Nav navbar>
+                        <NavItem className='float-sm-left'>
                             <NavLink>Check DB</NavLink>
                         </NavItem>
                         <NavItem>
