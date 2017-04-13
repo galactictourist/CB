@@ -18,6 +18,7 @@ interface S { }
 class App extends Component<P, S> {
     componentWillMount() {
         stores.ranchInfo.subscribe(() => { this.forceUpdate() })
+        stores.openPage.subscribe(() => { this.forceUpdate() })
     }
 
     get activePage() {
