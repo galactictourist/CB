@@ -17,8 +17,13 @@ if (!existsSync('./config')) {
 }
 
 if (existsSync(Configs.APP)) {
-    let value = JSON.parse(readFileSync(Configs.APP, 'utf-8'))
-    stores.ranchInfo.value = value
+    try {
+        let value = JSON.parse(readFileSync(Configs.APP, 'utf-8'))
+        stores.ranchInfo.value = value
+    } catch (err) {
+        console.error(err)
+        alert('Error reading configurations')
+    }
 }
 
 actions.ranchInfoSave.subscribe(value => {
