@@ -14,6 +14,7 @@ import NewRanchComp from './components/new-ranch'
 import AddBull from './components/add/bull'
 import AddCow from './components/add/cow'
 import AddCalf from './components/add/calf'
+import AddSteer from './components/add/steer'
 
 interface P { }
 
@@ -38,6 +39,8 @@ class App extends Component<P, S> {
             return <AddCow />
         } else if (page == 'add-calf') {
             return <AddCalf />
+        } else if (page == 'add-steer') {
+            return <AddSteer />
         }
 
         return null
