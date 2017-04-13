@@ -41,7 +41,7 @@ const startState: S = {
 }
 
 export default class NewRanch extends Component<P, S> {
-    state = startState
+    state = ranchInfo.value || startState
 
     componentWillMount() {
         this.subscribe(ranchInfo, state => {
