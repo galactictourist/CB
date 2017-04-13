@@ -6,4 +6,4 @@ import {
 
 export const ranchInfo = new Store<RanchInfo>()
 
-export const openPage = new Store<string>()
+export const openPage = new Store<string>('home')
