@@ -14,6 +14,10 @@ import {
     DropdownItem
 } from 'reactstrap'
 
+import {
+    openPage
+} from '../stores'
+
 interface P {
 }
 
@@ -88,7 +92,9 @@ export default class NavBar extends React.Component<P, S> {
             toggle={this.toggleAdmin}>
             <DropdownToggle nav caret>Admin</DropdownToggle>
             <DropdownMenu>
-                <DropdownItem>Ranch Info</DropdownItem>
+                <DropdownItem onClick={event => {
+                    openPage.value = 'info'
+                }}>Ranch Info</DropdownItem>
                 <DropdownItem>Settings</DropdownItem>
                 <DropdownItem>Contacts</DropdownItem>
                 <DropdownItem>Reports</DropdownItem>
