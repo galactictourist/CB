@@ -1,8 +1,8 @@
 import {
-    exists,
-    readFile,
-    writeFile,
-    mkdir
+    existsSync,
+    readFileSync,
+    writeFileSync,
+    mkdirSync
 } from 'fs'
 
 import * as actions from './actions'
@@ -12,38 +12,24 @@ namespace Configs {
     export const APP = './config/app.json'
 }
 
-exists('./config', configExists => {
-    if (!configExists) {
-        mkdir('./config', (err) => {
-            if (err) {
-                alert('App cannot start')
-                console.error(err)
-            }
-        })
-    }
-})
+if (!existsSync('./config')) {
+    mkdirSync('./config')
+}
 
-exists(Configs.APP, configExists => {
-    if (configExists) {
-        readFile(Configs.APP, 'utf-8', (err, file) => {
-            if (err) {
-                alert('Failed to read config file')
-                console.error(err)
-                return
-            }
-            let value = JSON.parse(file)
-            stores.ranchInfo.value = value
-            stores.ranchInfo.subscribe(value => {
-                var jsonValues = JSON.stringify(value, null, 2)
-                writeFile(Configs.APP, jsonValues, (err) => {
-                    if (err) {
-                        console.error(err)
-                        alert('Failed to save')
-                    } else {
-                        alert('Info Saved')
-                    }
-                })
-            })
-        })
+if (!existsSync(Configs.APP)) {
+    stores.ranchInfo.value = null
+} else {
+    let value = JSON.parse(readFileSync(Configs.APP, 'utf-8'))
+    stores.ranchInfo.value = value
+}
+
+actions.ranchInfoSave.subscribe(value => {
+    var json = JSON.stringify(value, null, 4)
+    try {
+        writeFileSync(Configs.APP, json)
+        stores.ranchInfo.value = value
+    } catch (err) {
+        alert('Could not save')
+        console.error(err)
     }
 })
