@@ -26,6 +26,8 @@ class App extends Component<P, S> {
 
         if (page == 'home') {
             return <HomeView />
+        } else if (page == 'info') {
+            return <NewRanchComp displayText='Ranch Info' />
         }
 
         return null
