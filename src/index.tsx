@@ -21,7 +21,7 @@ class App extends Component<P, S> {
         stores.openPage.subscribe(() => { this.forceUpdate() })
     }
 
-    get activePage() {
+    get mainPage() {
         if (stores.ranchInfo.value == null) {
             return <NewRanchComp />
         } else {
@@ -32,7 +32,7 @@ class App extends Component<P, S> {
     render() {
         return <div>
             <NavBar />
-            {this.activePage}
+            {this.mainPage}
         </div>
     }
 }
