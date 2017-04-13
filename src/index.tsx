@@ -21,6 +21,14 @@ class App extends Component<P, S> {
         stores.openPage.subscribe(() => { this.forceUpdate() })
     }
 
+    get activePage() {
+        var page = stores.openPage.value
+
+        if (page == 'home') {
+            return <HomeView />
+        }
+    }
+
     get mainPage() {
         if (stores.ranchInfo.value == null) {
             return <NewRanchComp />
