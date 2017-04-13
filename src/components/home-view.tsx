@@ -15,10 +15,12 @@ interface S {
 export default class HomeView extends Component<P, S> {
     get head() {
         return <thead>
-            <th>Type</th>
-            <th>Active</th>
-            <th>Inactive</th>
-            <th>Reference</th>
+            <tr>
+                <th>Type</th>
+                <th>Active</th>
+                <th>Inactive</th>
+                <th>Reference</th>
+            </tr>
         </thead>
     }
 
