@@ -33,7 +33,7 @@ class App extends Component<P, S> {
         if (stores.ranchInfo.value == null) {
             return <NewRanchComp />
         } else {
-            return <HomeView />
+            return this.activePage
         }
     }
 
