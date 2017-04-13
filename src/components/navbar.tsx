@@ -79,7 +79,9 @@ export default class NavBar extends React.Component<P, S> {
             toggle={this.toggleAdd}>
             <DropdownToggle nav caret>Add</DropdownToggle>
             <DropdownMenu>
-                <DropdownItem>New Bull</DropdownItem>
+                <DropdownItem onClick={event => {
+                    openPage.value = 'add-bull'
+                }}>New Bull</DropdownItem>
                 <DropdownItem>New Cow</DropdownItem>
                 <DropdownItem>New Calve</DropdownItem>
                 <DropdownItem>New Steer</DropdownItem>
