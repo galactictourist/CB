@@ -13,6 +13,7 @@ import NewRanchComp from './components/new-ranch'
 
 import AddBull from './components/add/bull'
 import AddCow from './components/add/cow'
+import AddCalf from './components/add/calf'
 
 interface P { }
 
@@ -35,6 +36,8 @@ class App extends Component<P, S> {
             return <AddBull />
         } else if (page == 'add-cow') {
             return <AddCow />
+        } else if (page == 'add-calf') {
+            return <AddCalf />
         }
 
         return null
