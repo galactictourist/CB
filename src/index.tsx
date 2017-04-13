@@ -12,6 +12,7 @@ import HomeView from './components/home-view'
 import NewRanchComp from './components/new-ranch'
 
 import AddBull from './components/add/bull'
+import AddCow from './components/add/cow'
 
 interface P { }
 
@@ -32,6 +33,8 @@ class App extends Component<P, S> {
             return <NewRanchComp displayText='Ranch Info' />
         } else if (page == 'add-bull') {
             return <AddBull />
+        } else if (page == 'add-cow') {
+            return <AddCow />
         }
 
         return null
