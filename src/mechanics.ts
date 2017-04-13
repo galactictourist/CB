@@ -28,6 +28,7 @@ actions.ranchInfoSave.subscribe(value => {
     try {
         writeFileSync(Configs.APP, json)
         stores.ranchInfo.value = value
+        alert('Info saved')
     } catch (err) {
         alert('Could not save')
         console.error(err)
