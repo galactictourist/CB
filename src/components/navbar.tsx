@@ -113,7 +113,9 @@ export default class NavBar extends React.Component<P, S> {
                     right
                     onClick={this.toggleMain}
                 />
-                <NavbarBrand>Cattle Barn</NavbarBrand>
+                <NavbarBrand onClick={event => {
+                    openPage.value = 'home'
+                }}>Cattle Barn</NavbarBrand>
                 <Collapse isOpen={s.open} navbar>
                     <Nav navbar>
                         {this.cattleDropdown}
