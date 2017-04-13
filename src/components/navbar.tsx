@@ -82,9 +82,15 @@ export default class NavBar extends React.Component<P, S> {
                 <DropdownItem onClick={event => {
                     openPage.value = 'add-bull'
                 }}>New Bull</DropdownItem>
-                <DropdownItem>New Cow</DropdownItem>
-                <DropdownItem>New Calf</DropdownItem>
-                <DropdownItem>New Steer</DropdownItem>
+                <DropdownItem onClick={event => {
+                    openPage.value = 'add-cow'
+                }}>New Cow</DropdownItem>
+                <DropdownItem onClick={event => {
+                    openPage.value = 'add-calf'
+                }}>New Calf</DropdownItem>
+                <DropdownItem onClick={event => {
+                    openPage.value = 'add-steer'
+                }}>New Steer</DropdownItem>
             </DropdownMenu>
         </NavDropdown>
     }
