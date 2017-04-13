@@ -38,7 +38,7 @@ const startState: S = {
     timber: '',
     email: '',
     website: '',
-    ranchType: '',
+    ranchType: 0,
 }
 
 export default class NewRanch extends Component<P, S> {
@@ -221,14 +221,15 @@ export default class NewRanch extends Component<P, S> {
                     <Input type='select'
                         value={s.ranchType}
                         onChange={event => {
+                            var ranchType = parseInt(event.target.value)
                             this.setState({
-                                ranchType: event.target.value
+                                ranchType
                             })
                         }}>
-                        <option value=''>--Select--</option>
-                        <option>Commercial</option>
-                        <option>Registered</option>
-                        <option>Both</option>
+                        <option value={0}>--Select--</option>
+                        <option value={1}>Commercial</option>
+                        <option value={2}>Registered</option>
+                        <option value={3}>Both</option>
                     </Input>
                 </Col>
             </Row>

@@ -11,5 +11,5 @@ export interface RanchInfo {
     timber: string
     email: string
     website: string
-    ranchType: string
+    ranchType: number
 }
