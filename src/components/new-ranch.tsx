@@ -17,6 +17,9 @@ import {
 import {
     ranchInfo
 } from '../stores'
+import {
+    ranchInfoSave
+} from '../actions'
 
 interface P {
 }
@@ -51,7 +54,7 @@ export default class NewRanch extends Component<P, S> {
     }
 
     save() {
-        ranchInfo.value = this.state
+        ranchInfoSave.trigger(this.state)
     }
 
     render() {
