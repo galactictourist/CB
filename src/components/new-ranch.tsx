@@ -22,6 +22,7 @@ import {
 } from '../actions'
 
 interface P {
+    displayText?: string
 }
 
 const startState: S = {
@@ -58,10 +59,11 @@ export default class NewRanch extends Component<P, S> {
     }
 
     render() {
+        const p = this.props
         const s = this.state
 
         return <Container fluid>
-            <h2>New Ranch Register</h2>
+            <h2>{p.displayText || 'New Ranch Register'}</h2>
             <Row>
                 <Col sm={4}>
                     <FormGroup>
