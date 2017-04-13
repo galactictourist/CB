@@ -16,9 +16,7 @@ if (!existsSync('./config')) {
     mkdirSync('./config')
 }
 
-if (!existsSync(Configs.APP)) {
-    stores.ranchInfo.value = null
-} else {
+if (existsSync(Configs.APP)) {
     let value = JSON.parse(readFileSync(Configs.APP, 'utf-8'))
     stores.ranchInfo.value = value
 }
