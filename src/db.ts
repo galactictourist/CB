@@ -3,6 +3,10 @@ import {
     open
 } from 'sqlite'
 
+import {
+    dbReady
+} from './actions'
+ 
 type ParamType = string | number
 interface ExecType {
     changes: number
@@ -15,6 +19,7 @@ class DB {
     constructor() {
         open('Ranch.sqlite').then(db => {
             this.db = db
+            dbReady.trigger()
         }).catch(err => {
             console.error(err)
         })
