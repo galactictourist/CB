@@ -16,6 +16,7 @@ import Component from '../'
 import InputComp from '../input-comp'
 import LocationInp from '../input-comp/location'
 import HornStatus from '../input-comp/horn-status'
+import BreedInp from '../input-comp/breed'
 
 interface P {
 }
@@ -91,7 +92,7 @@ export default class AddBull extends Component<P, S> {
             </Row>
             <Row>
                 <Col sm={3}>
-                    <InputComp label='Breed' type='text' />
+                    <BreedInp />
                 </Col>
                 <Col sm={3}>
                     <InputComp label='Color' type='text' />
