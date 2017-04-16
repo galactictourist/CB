@@ -28,7 +28,9 @@ export default class InputComp extends React.Component<P, S> {
         const p = this.props
 
         return <FormGroup>
-            <Label for={`inputcomp-${this.id}`}>{p.label}</Label>
+            <Label for={`inputcomp-${this.id}`}>
+                <b>{p.label}</b>
+            </Label>
             <Input
                 id={`inputcomp-${this.id}`}
                 type={p.type}
