@@ -14,8 +14,8 @@ import {
 import Component from '../'
 
 import InputComp from '../input-comp'
-import LocationInp from './location-inp'
-import HornStatus from './horn-status'
+import LocationInp from '../input-comp/location'
+import HornStatus from '../input-comp/horn-status'
 
 interface P {
 }
