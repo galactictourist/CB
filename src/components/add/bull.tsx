@@ -7,20 +7,55 @@ import {
     Input,
     FormGroup,
     Label,
+    ButtonGroup,
     Button
 } from 'reactstrap'
 
 import Component from '../'
 
 import InputComp from '../input-comp'
+import LocationInp from './location-inp'
+import HornStatus from './horn-status'
 
 interface P {
 }
 
 interface S {
+    showAnimal: boolean
+    aiBull: boolean
+    reference: boolean
 }
 
 export default class AddBull extends Component<P, S> {
+    state = {
+        showAnimal: false,
+        aiBull: false,
+        reference: false
+    }
+
+    get btnGroup() {
+        const s = this.state
+
+        return <FormGroup>
+            <Label>
+                <b>Options</b>
+            </Label>
+            <div>
+                <ButtonGroup>
+                    <Button active={s.showAnimal} onClick={event => {
+                        this.setState({ showAnimal: !s.showAnimal })
+                    }}>Show Animal</Button>
+                    <Button active={s.aiBull} onClick={event => {
+                        this.setState({ aiBull: !s.aiBull })
+                    }}>AI Bull</Button>
+                    <Button active={s.reference} onClick={event => {
+                        this.setState({ reference: !s.reference })
+                    }}>Reference</Button>
+                </ButtonGroup>
+            </div>
+        </FormGroup>
+    }
+
     render() {
         return <Container fluid>
             <h2>Add New Bull</h2>
@@ -48,6 +83,94 @@ export default class AddBull extends Component<P, S> {
                         label='Birth Weight'
                         type='number'
                     />
+                </Col>
+            </Row>
+            <Row>
+                <Col sm={3}>
+                    <InputComp label='Breed' type='text' />
+                </Col>
+                <Col sm={3}>
+                    <InputComp label='Color' type='text' />
+                </Col>
+                <Col sm={3}>
+                    <InputComp label='Special Markings' type='text' />
+                </Col>
+                <Col sm={3}>
+                    <InputComp label='Import/Export' type='select'>
+                        <option>Exported</option>
+                        <option>Imported</option>
+                    </InputComp>
+                </Col>
+            </Row>
+            <Row>
+                <Col sm={3}>
+                    <InputComp label='Ear Tag' type='text' />
+                </Col>
+                <Col sm={3}>
+                    <LocationInp />
+                </Col>
+                <Col sm={3}>
+                    <InputComp label='Brand Number' type='text' />
+                </Col>
+                <Col sm={3}>
+                    <LocationInp />
+                </Col>
+            </Row>
+            <Row>
+                <Col sm={3}>
+                    <InputComp label='Tattoo' type='text' />
+                </Col>
+                <Col sm={3}>
+                    <LocationInp />
+                </Col>
+                <Col sm={3}>
+                    <InputComp label='Electronic ID' type='text' />
+                </Col>
+                <Col sm={3}>
+                    <LocationInp />
+                </Col>
+            </Row>
+            <Row>
+                <Col sm={3}>
+                    <InputComp label='Other ID' type='text' />
+                </Col>
+                <Col sm={3}>
+                    <LocationInp />
+                </Col>
+                <Col sm={3}>
+                    <InputComp label='Metal ID' type='text' />
+                </Col>
+                <Col sm={3}>
+                    <LocationInp />
+                </Col>
+            </Row>
+            <Row>
+                <Col sm={3}>
+                    <InputComp label='Genetic/Donor DAM' type='text' />
+                </Col>
+                <Col sm={3}>
+                    <InputComp label='Bloodline' type='text' />
+                </Col>
+                <Col sm={3}>
+                    <InputComp label='Sibling Code' type='text' />
+                </Col>
+                <Col sm={3}>
+                    <InputComp label='Cloned' type='text' />
+                </Col>
+            </Row>
+            <Row>
+                <Col sm={6}>
+                    {this.btnGroup}
+                </Col>
+                <Col sm={3}>
+                    <FormGroup>
+                        <Label><b>Horn Status</b></Label>
+                        <HornStatus onChange={value => {
+                        }} value='' />
+                    </FormGroup>
+                </Col>
+                <Col sm={3}>
+                    <InputComp label='Pasture' type='text' />
                 </Col>
             </Row>
         </Container>
