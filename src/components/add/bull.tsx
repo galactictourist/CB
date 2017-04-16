@@ -12,7 +12,7 @@ import {
 
 import Component from '../'
 
-import InputComp from './input-comp'
+import InputComp from '../input-comp'
 
 interface P {
 }

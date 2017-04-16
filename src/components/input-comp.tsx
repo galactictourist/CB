@@ -5,7 +5,7 @@ import {
     FormGroup
 } from 'reactstrap'
 
-import Component from '../'
+import Component from './'
 
 interface P {
     type: 'text' | 'number' | 'password' | 'date' | 'time'
