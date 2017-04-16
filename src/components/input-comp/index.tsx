@@ -5,7 +5,7 @@ import {
     FormGroup
 } from 'reactstrap'
 
-import AutoIncrement from '../broadcaster/auto-incrementer'
+import AutoIncrement from '../../broadcaster/auto-incrementer'
 import Component from './'
 
 const autoIncrement = new AutoIncrement()
