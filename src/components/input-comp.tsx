@@ -39,6 +39,7 @@ export default class InputComp extends React.Component<P, S> {
                         p.onChange(event.target.value)
                     }
                 }}
+                children={p.children}
             />
         </FormGroup>
     }
