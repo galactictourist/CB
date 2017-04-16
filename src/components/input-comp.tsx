@@ -8,7 +8,7 @@ import {
 import Component from './'
 
 interface P {
-    type: 'text' | 'number' | 'password' | 'date' | 'time'
+    type: 'text' | 'number' | 'password' | 'date' | 'time' | 'color' | 'select'
     label?: string
     placeholder?: string
     value?: string
