@@ -24,13 +24,15 @@ interface S {
     showAnimal: boolean
     aiBull: boolean
     reference: boolean
+    hornStatus: string
 }
 
 export default class AddBull extends Component<P, S> {
     state = {
         showAnimal: false,
         aiBull: false,
-        reference: false
+        reference: false,
+        hornStatus: 'Polled'
     }
 
     get btnGroup() {
@@ -57,6 +59,8 @@ export default class AddBull extends Component<P, S> {
     }
 
     render() {
+        const s = this.state
+
         return <Container fluid>
             <h2>Add New Bull</h2>
             <Row>
@@ -166,7 +170,8 @@ export default class AddBull extends Component<P, S> {
                     <FormGroup>
                         <Label><b>Horn Status</b></Label>
                         <HornStatus onChange={value => {
-                        }} value='' />
+                            this.setState({ hornStatus: value })
+                        }} value={s.hornStatus} />
                     </FormGroup>
                 </Col>
                 <Col sm={3}>
