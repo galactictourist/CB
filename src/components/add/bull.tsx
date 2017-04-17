@@ -63,6 +63,42 @@ export default class AddBull extends Component<P, S> {
         </FormGroup>
     }
 
+    get bullPurchasedFields() {
+        const s = this.state
+
+        // don't display if bull is not purchased
+        if (s.origin != 'purchased') {
+            return null
+        }
+
+        return <Row>
+            <Col>
+                <InputComp
+                    label='Purchased Form'
+                    type='text'
+                />
+            </Col>
+            <Col>
+                <InputComp
+                    label='Purchased Date'
+                    type='date'
+                />
+            </Col>
+            <Col>
+                <InputComp
+                    label='Price'
+                    type='text'
+                />
+            </Col>
+            <Col>
+                <InputComp
+                    label='Breeder'
+                    type='text'
+                />
+            </Col>
+        </Row>
+    }
+
     get originBtnGroup() {
         const s = this.state
 
@@ -249,6 +285,7 @@ export default class AddBull extends Component<P, S> {
                     {this.originBtnGroup}
                 </Col>
             </Row>
+            {this.bullPurchasedFields}
         </Container>
     }
 }
