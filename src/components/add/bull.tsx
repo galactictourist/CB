@@ -97,13 +97,21 @@ export default class AddBull extends Component<P, S> {
                     <BreedInp />
                 </Col>
                 <Col sm={3}>
-                    <InputComp label='Color' type='text' />
+                    <InputComp
+                        label='Color'
+                        type='text'
+                    />
                 </Col>
                 <Col sm={3}>
-                    <InputComp label='Special Markings' type='text' />
+                    <InputComp
+                        label='Special Markings'
+                        type='text'
+                    />
                 </Col>
                 <Col sm={3}>
-                    <InputComp label='Import/Export' type='select'>
+                    <InputComp
+                        label='Import/Export'
+                        type='select'>
                         <option>Exported</option>
                         <option>Imported</option>
                     </InputComp>
@@ -111,27 +119,19 @@ export default class AddBull extends Component<P, S> {
             </Row>
             <Row>
                 <Col sm={3}>
-                    <InputComp label='Ear Tag' type='text' />
+                    <InputComp
+                        label='Ear Tag'
+                        type='text'
+                    />
                 </Col>
                 <Col sm={3}>
                     <LocationInp />
                 </Col>
                 <Col sm={3}>
-                    <InputComp label='Brand Number' type='text' />
-                </Col>
-                <Col sm={3}>
-                    <LocationInp />
-                </Col>
-            </Row>
-            <Row>
-                <Col sm={3}>
-                    <InputComp label='Tattoo' type='text' />
-                </Col>
-                <Col sm={3}>
-                    <LocationInp />
-                </Col>
-                <Col sm={3}>
-                    <InputComp label='Electronic ID' type='text' />
+                    <InputComp
+                        label='Brand Number'
+                        type='text'
+                    />
                 </Col>
                 <Col sm={3}>
                     <LocationInp />
@@ -139,13 +139,39 @@ export default class AddBull extends Component<P, S> {
             </Row>
             <Row>
                 <Col sm={3}>
-                    <InputComp label='Other ID' type='text' />
+                    <InputComp
+                        label='Tattoo'
+                        type='text'
+                    />
                 </Col>
                 <Col sm={3}>
                     <LocationInp />
                 </Col>
                 <Col sm={3}>
-                    <InputComp label='Metal ID' type='text' />
+                    <InputComp
+                        label='Electronic ID'
+                        type='text'
+                    />
+                </Col>
+                <Col sm={3}>
+                    <LocationInp />
+                </Col>
+            </Row>
+            <Row>
+                <Col sm={3}>
+                    <InputComp
+                        label='Other ID'
+                        type='text'
+                    />
+                </Col>
+                <Col sm={3}>
+                    <LocationInp />
+                </Col>
+                <Col sm={3}>
+                    <InputComp
+                        label='Metal ID'
+                        type='text'
+                    />
                 </Col>
                 <Col sm={3}>
                     <LocationInp />
@@ -156,13 +182,19 @@ export default class AddBull extends Component<P, S> {
                     <GeneticDonorInp />
                 </Col>
                 <Col sm={3}>
-                    <InputComp label='Bloodline' type='text' />
+                    <InputComp
+                        label='Bloodline'
+                        type='text'
+                    />
                 </Col>
                 <Col sm={3}>
                     <SiblingCodeInp />
                 </Col>
                 <Col sm={3}>
-                    <InputComp label='Cloned' type='text' />
+                    <InputComp
+                        label='Cloned'
+                        type='text'
+                    />
                 </Col>
             </Row>
             <Row>
@@ -178,7 +210,10 @@ export default class AddBull extends Component<P, S> {
                     </FormGroup>
                 </Col>
                 <Col sm={3}>
-                    <InputComp label='Pasture' type='text' />
+                    <InputComp
+                        label='Pasture'
+                        type='text'
+                    />
                 </Col>
             </Row>
         </Container>
