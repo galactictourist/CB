@@ -116,7 +116,7 @@ export default class NavBar extends React.Component<P, S> {
     render() {
         const s = this.state
         return (
-            <Navbar color='faded' light toggleable>
+            <Navbar color='faded' light toggleable fixed='top'>
                 <NavbarToggler
                     right
                     onClick={this.toggleMain}
