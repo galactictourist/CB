@@ -18,6 +18,7 @@ import LocationInp from '../input-comp/location'
 import HornStatus from '../input-comp/horn-status'
 import BreedInp from '../input-comp/breed'
 import GeneticDonorInp from '../input-comp/genetic-donor'
+import SiblingCodeInp from '../input-comp/sibling-code'
 
 interface P {
 }
@@ -158,7 +159,7 @@ export default class AddBull extends Component<P, S> {
                     <InputComp label='Bloodline' type='text' />
                 </Col>
                 <Col sm={3}>
-                    <InputComp label='Sibling Code' type='text' />
+                    <SiblingCodeInp />
                 </Col>
                 <Col sm={3}>
                     <InputComp label='Cloned' type='text' />
