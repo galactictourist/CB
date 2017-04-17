@@ -323,6 +323,17 @@ export default class AddBull extends Component<P, S> {
                     />
                 </Col>
             </Row>
+            <Row style={{
+                textAlign: 'center'
+            }}>
+                <Col sm={12}>
+                    <Button>Save</Button>
+                    {' '}
+                    <Button>Cancel</Button>
+                    {' '}
+                    <Button>Clear</Button>
+                </Col>
+            </Row>
         </Container>
     }
 }
