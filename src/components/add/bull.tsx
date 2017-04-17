@@ -8,7 +8,8 @@ import {
     FormGroup,
     Label,
     ButtonGroup,
-    Button
+    Button,
+    FormText
 } from 'reactstrap'
 
 import Component from '../'
@@ -286,6 +287,42 @@ export default class AddBull extends Component<P, S> {
                 </Col>
             </Row>
             {this.bullPurchasedFields}
+            <Row>
+                <Col>
+                    <InputComp
+                        label='Image'
+                        type='file'
+                    />
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <InputComp
+                        label='Current Owner of Bull'
+                        type='text'
+                    />
+                </Col>
+                <Col>
+                    <InputComp
+                        label="Bull's Sire"
+                        type='text'
+                    />
+                </Col>
+                <Col>
+                    <InputComp
+                        label="Bull's Dame"
+                        type='text'
+                    />
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <InputComp
+                        label='Comments'
+                        type='textarea'
+                    />
+                </Col>
+            </Row>
         </Container>
     }
 }
