@@ -28,6 +28,7 @@ interface S {
     aiBull: boolean
     reference: boolean
     hornStatus: string
+    origin: string
 }
 
 export default class AddBull extends Component<P, S> {
@@ -35,7 +36,8 @@ export default class AddBull extends Component<P, S> {
         showAnimal: false,
         aiBull: false,
         reference: false,
-        hornStatus: 'Polled'
+        hornStatus: 'Polled',
+        origin: 'born'
     }
 
     get btnGroup() {
@@ -56,6 +58,26 @@ export default class AddBull extends Component<P, S> {
                     <Button active={s.reference} onClick={event => {
                         this.setState({ reference: !s.reference })
                     }}>Reference</Button>
+                </ButtonGroup>
+            </div>
+        </FormGroup>
+    }
+
+    get originBtnGroup() {
+        const s = this.state
+
+        return <FormGroup>
+            <Label>
+                <b>Origin</b>
+            </Label>
+            <div>
+                <ButtonGroup>
+                    <Button active={s.origin == 'born'} onClick={event => {
+                        this.setState({ origin: 'born' })
+                    }}>Born</Button>
+                    <Button active={s.origin == 'purchased'} onClick={event => {
+                        this.setState({ origin: 'purchased' })
+                    }}>Purchased</Button>
                 </ButtonGroup>
             </div>
         </FormGroup>
@@ -214,6 +236,17 @@ export default class AddBull extends Component<P, S> {
                         label='Pasture'
                         type='text'
                     />
+                </Col>
+            </Row>
+            <Row>
+                <Col sm={3}>
+                    <InputComp
+                        label='Pen'
+                        type='text'
+                    />
+                </Col>
+                <Col sm={3}>
+                    {this.originBtnGroup}
                 </Col>
             </Row>
         </Container>
