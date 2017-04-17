@@ -57,7 +57,16 @@ class App extends Component<P, S> {
     render() {
         return <div>
             <NavBar />
-            {this.mainPage}
+            <div style={{
+                position: 'fixed',
+                top: 50,
+                bottom: 0,
+                left: 0,
+                right: 0,
+                overflowY: 'auto'
+            }}>
+                {this.mainPage}
+            </div>
         </div>
     }
 }
