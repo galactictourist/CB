@@ -17,6 +17,7 @@ import InputComp from '../input-comp'
 import LocationInp from '../input-comp/location'
 import HornStatus from '../input-comp/horn-status'
 import BreedInp from '../input-comp/breed'
+import GeneticDonorInp from '../input-comp/genetic-donor'
 
 interface P {
 }
@@ -151,7 +152,7 @@ export default class AddBull extends Component<P, S> {
             </Row>
             <Row>
                 <Col sm={3}>
-                    <InputComp label='Genetic/Donor DAM' type='text' />
+                    <GeneticDonorInp />
                 </Col>
                 <Col sm={3}>
                     <InputComp label='Bloodline' type='text' />
