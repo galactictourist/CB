@@ -313,7 +313,9 @@ export default class AddBull extends Component<P, S> {
             </Row>
             <Row>
                 <Col>
-                    <img src={s.imagePath} />
+                    <img style={{
+                        width: '100%'
+                    }} src={s.imagePath} />
                 </Col>
             </Row>
             <Row>
