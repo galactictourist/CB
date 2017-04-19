@@ -30,6 +30,7 @@ interface S {
     reference: boolean
     hornStatus: string
     origin: string
+    imagePath: string
 }
 
 export default class AddBull extends Component<P, S> {
@@ -38,7 +39,8 @@ export default class AddBull extends Component<P, S> {
         aiBull: false,
         reference: false,
         hornStatus: 'Polled',
-        origin: 'born'
+        origin: 'born',
+        imagePath: null
     }
 
     get btnGroup() {
@@ -289,10 +291,29 @@ export default class AddBull extends Component<P, S> {
             {this.bullPurchasedFields}
             <Row>
                 <Col>
-                    <InputComp
-                        label='Image'
-                        type='file'
-                    />
+                    <FormGroup>
+                        <Label>
+                            <b>
+                                Image
+                            </b>
+                        </Label>
+                        <input
+                            id='file-inp'
+                            type='file'
+                            onChange={event => {
+                                var element: any = document.getElementById('file-inp')
+                                var path = element.files[0].path
+                                this.setState({
+                                    imagePath: path
+                                })
+                            }}
+                        />
+                    </FormGroup>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <img src={s.imagePath} />
                 </Col>
             </Row>
             <Row>
