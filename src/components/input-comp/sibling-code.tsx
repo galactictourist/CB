@@ -5,6 +5,8 @@ import Component from '../'
 import InputComp from './'
 
 interface P {
+    value?: string
+    onChange?: (args: string) => void
 }
 
 interface S {
@@ -22,7 +24,14 @@ export default class SiblingCode extends Component<P, S> {
     }
 
     render() {
-        return <InputComp label='Sibling Code' type='select'>
+        const p = this.props
+
+        return <InputComp
+            label='Sibling Code'
+            type='select'
+            value={p.value}
+            onChange={p.onChange}
+        >
             {this.options}
         </InputComp>
     }
