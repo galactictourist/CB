@@ -47,12 +47,24 @@ interface S {
     metalIdLoc: string
     genetic: string
     bloodline: string
+    siblingCode: string
+    cloned: string
     showAnimal: boolean
     aiBull: boolean
     reference: boolean
     hornStatus: string
     origin: string
     imagePath: string
+    pasture: string
+    pen: string
+    currBullOwner: string
+    bullSire: string
+    bullDame: string
+    comments: string
+    purchaseFrom: string
+    purchaseDate: string
+    price: number
+    breeder: string
 }
 
 export default class AddBull extends Component<P, S> {
@@ -80,12 +92,24 @@ export default class AddBull extends Component<P, S> {
             metalIdLoc: '',
             genetic: '',
             bloodline: '',
+            siblingCode: '',
+            cloned: '',
             showAnimal: false,
             aiBull: false,
             reference: false,
             hornStatus: 'Polled',
             origin: 'born',
-            imagePath: null
+            imagePath: null,
+            pasture: '',
+            pen: '',
+            currBullOwner: '',
+            bullSire: '',
+            bullDame: '',
+            comments: '',
+            purchaseFrom: '',
+            purchaseDate: '',
+            price: 0,
+            breeder: ''
         }
     }
 
@@ -125,24 +149,43 @@ export default class AddBull extends Component<P, S> {
                 <InputComp
                     label='Purchased Form'
                     type='text'
+                    value={s.purchaseFrom}
+                    onChange={value => {
+                        this.setState({
+                            purchaseFrom: value
+                        })
+                    }}
                 />
             </Col>
             <Col>
                 <InputComp
                     label='Purchased Date'
                     type='date'
+                    value={s.purchaseDate}
+                    onChange={value => {
+                        this.setState({ purchaseDate: value })
+                    }}
                 />
             </Col>
             <Col>
                 <InputComp
                     label='Price'
-                    type='text'
+                    type='number'
+                    value={s.price}
+                    onChange={value => {
+                        var n = parseFloat(value)
+                        this.setState({ price: n })
+                    }}
                 />
             </Col>
             <Col>
                 <InputComp
                     label='Breeder'
                     type='text'
+                    value={s.breeder}
+                    onChange={value => {
+                        this.setState({ breeder: value })
+                    }}
                 />
             </Col>
         </Row>
@@ -178,47 +221,82 @@ export default class AddBull extends Component<P, S> {
                     <InputComp
                         label='Name'
                         type='text'
+                        value={s.name}
+                        onChange={value => {
+                            this.setState({ name: value })
+                        }}
                     />
                 </Col>
                 <Col sm={3}>
                     <InputComp
                         label='Reg. #'
                         type='text'
+                        value={s.regNum}
+                        onChange={value => {
+                            this.setState({ regNum: value })
+                        }}
                     />
                 </Col>
                 <Col sm={2}>
                     <InputComp
                         label='D.O.B'
                         type='date'
+                        value={s.dateOfBirth}
+                        onChange={value => {
+                            this.setState({ dateOfBirth: value })
+                        }}
                     />
                 </Col>
                 <Col sm={2}>
                     <InputComp
                         label='Birth Weight'
                         type='number'
+                        value={s.birthWeight}
+                        onChange={value => {
+                            var n = parseFloat(value)
+                            this.setState({ birthWeight: n })
+                        }}
                     />
                 </Col>
             </Row>
             <Row>
                 <Col sm={3}>
-                    <BreedInp />
+                    <BreedInp
+                        value={s.breed}
+                        onChange={value => {
+                            this.setState({ breed: value })
+                        }}
+                    />
                 </Col>
                 <Col sm={3}>
                     <InputComp
                         label='Color'
                         type='text'
+                        value={s.color}
+                        onChange={value => {
+                            this.setState({ color: value })
+                        }}
                     />
                 </Col>
                 <Col sm={3}>
                     <InputComp
                         label='Special Markings'
                         type='text'
+                        value={s.specialMarkings}
+                        onChange={value => {
+                            this.setState({ specialMarkings: value })
+                        }}
                     />
                 </Col>
                 <Col sm={3}>
                     <InputComp
                         label='Import/Export'
-                        type='select'>
+                        type='select'
+                        value={s.importExport}
+                        onChange={value => {
+                            this.setState({ importExport: value })
+                        }}
+                    >
                         <option>Exported</option>
                         <option>Imported</option>
                     </InputComp>
@@ -229,19 +307,37 @@ export default class AddBull extends Component<P, S> {
                     <InputComp
                         label='Ear Tag'
                         type='text'
+                        value={s.earTag}
+                        onChange={value => {
+                            this.setState({ earTag: value })
+                        }}
                     />
                 </Col>
                 <Col sm={3}>
-                    <LocationInp />
+                    <LocationInp
+                        value={s.earTagLoc}
+                        onChange={value => {
+                            this.setState({ earTagLoc: value })
+                        }}
+                    />
                 </Col>
                 <Col sm={3}>
                     <InputComp
                         label='Brand Number'
                         type='text'
+                        value={s.brandNum}
+                        onChange={value => {
+                            this.setState({ brandNum: value })
+                        }}
                     />
                 </Col>
                 <Col sm={3}>
-                    <LocationInp />
+                    <LocationInp
+                        value={s.brandNumLoc}
+                        onChange={value => {
+                            this.setState({ brandNumLoc: value })
+                        }}
+                    />
                 </Col>
             </Row>
             <Row>
@@ -249,19 +345,37 @@ export default class AddBull extends Component<P, S> {
                     <InputComp
                         label='Tattoo'
                         type='text'
+                        value={s.tattoo}
+                        onChange={value => {
+                            this.setState({ tattoo: value })
+                        }}
                     />
                 </Col>
                 <Col sm={3}>
-                    <LocationInp />
+                    <LocationInp
+                        value={s.tattooLoc}
+                        onChange={value => {
+                            this.setState({ tattooLoc: value })
+                        }}
+                    />
                 </Col>
                 <Col sm={3}>
                     <InputComp
                         label='Electronic ID'
                         type='text'
+                        value={s.electronicId}
+                        onChange={value => {
+                            this.setState({ electronicId: value })
+                        }}
                     />
                 </Col>
                 <Col sm={3}>
-                    <LocationInp />
+                    <LocationInp
+                        value={s.electronicIdLoc}
+                        onChange={value => {
+                            this.setState({ electronicIdLoc: value })
+                        }}
+                    />
                 </Col>
             </Row>
             <Row>
@@ -269,38 +383,74 @@ export default class AddBull extends Component<P, S> {
                     <InputComp
                         label='Other ID'
                         type='text'
+                        value={s.otherId}
+                        onChange={value => {
+                            this.setState({ otherId: value })
+                        }}
                     />
                 </Col>
                 <Col sm={3}>
-                    <LocationInp />
+                    <LocationInp
+                        value={s.otherIdLoc}
+                        onChange={value => {
+                            this.setState({ otherIdLoc: value })
+                        }}
+                    />
                 </Col>
                 <Col sm={3}>
                     <InputComp
                         label='Metal ID'
                         type='text'
+                        value={s.metalId}
+                        onChange={value => {
+                            this.setState({ metalId: value })
+                        }}
                     />
                 </Col>
                 <Col sm={3}>
-                    <LocationInp />
+                    <LocationInp
+                        value={s.metalIdLoc}
+                        onChange={value => {
+                            this.setState({ metalIdLoc: value })
+                        }}
+                    />
                 </Col>
             </Row>
             <Row>
                 <Col sm={3}>
-                    <GeneticDonorInp />
+                    <GeneticDonorInp
+                        value={s.genetic}
+                        onChange={value => {
+                            this.setState({ genetic: value })
+                        }}
+                    />
                 </Col>
                 <Col sm={3}>
                     <InputComp
                         label='Bloodline'
                         type='text'
+                        value={s.bloodline}
+                        onChange={value => {
+                            this.setState({ bloodline: value })
+                        }}
                     />
                 </Col>
                 <Col sm={3}>
-                    <SiblingCodeInp />
+                    <SiblingCodeInp
+                        value={s.siblingCode}
+                        onChange={value => {
+                            this.setState({ siblingCode: value })
+                        }}
+                    />
                 </Col>
                 <Col sm={3}>
                     <InputComp
                         label='Cloned'
                         type='text'
+                        value={s.cloned}
+                        onChange={value => {
+                            this.setState({ cloned: value })
+                        }}
                     />
                 </Col>
             </Row>
@@ -320,6 +470,10 @@ export default class AddBull extends Component<P, S> {
                     <InputComp
                         label='Pasture'
                         type='text'
+                        value={s.pasture}
+                        onChange={value => {
+                            this.setState({ pasture: value })
+                        }}
                     />
                 </Col>
             </Row>
@@ -328,6 +482,10 @@ export default class AddBull extends Component<P, S> {
                     <InputComp
                         label='Pen'
                         type='text'
+                        value={s.pen}
+                        onChange={value => {
+                            this.setState({ pen: value })
+                        }}
                     />
                 </Col>
                 <Col sm={3}>
@@ -369,18 +527,30 @@ export default class AddBull extends Component<P, S> {
                     <InputComp
                         label='Current Owner of Bull'
                         type='text'
+                        value={s.currBullOwner}
+                        onChange={value => {
+                            this.setState({ currBullOwner: value })
+                        }}
                     />
                 </Col>
                 <Col>
                     <InputComp
                         label="Bull's Sire"
                         type='text'
+                        value={s.bullSire}
+                        onChange={value => {
+                            this.setState({ bullSire: value })
+                        }}
                     />
                 </Col>
                 <Col>
                     <InputComp
                         label="Bull's Dame"
                         type='text'
+                        value={s.bullDame}
+                        onChange={value => {
+                            this.setState({ bullDame: value })
+                        }}
                     />
                 </Col>
             </Row>
@@ -389,6 +559,10 @@ export default class AddBull extends Component<P, S> {
                     <InputComp
                         label='Comments'
                         type='textarea'
+                        value={s.comments}
+                        onChange={value => {
+                            this.setState({ comments: value })
+                        }}
                     />
                 </Col>
             </Row>
