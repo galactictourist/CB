@@ -5,6 +5,8 @@ import Component from '../'
 import InputComp from './'
 
 interface P {
+    value?: string
+    onChange?: (args: string) => void
 }
 
 interface S {
@@ -22,7 +24,14 @@ export default class GeneticDonor extends Component<P, S> {
     }
 
     render() {
-        return <InputComp label='Genetic/Donor DAM' type='select'>
+        const p = this.props
+
+        return <InputComp
+            label='Genetic/Donor DAM'
+            type='select'
+            value={p.value}
+            onChange={p.onChange}
+        >
             {this.options}
         </InputComp>
     }
