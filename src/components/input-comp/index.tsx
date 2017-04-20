@@ -12,10 +12,10 @@ const autoIncrement = new AutoIncrement()
 
 interface P {
     type: 'text' | 'number' | 'password' | 'date' | 'time' | 'color' | 'select'
-        | 'file' | 'textarea'
+    | 'file' | 'textarea'
     label?: string
     placeholder?: string
-    value?: string
+    value?: string | number
     onChange?: (args: string) => void
 }
 
