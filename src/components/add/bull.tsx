@@ -25,6 +25,28 @@ interface P {
 }
 
 interface S {
+    name: string
+    regNum: string
+    dateOfBirth: string
+    birthWeight: number
+    breed: string
+    color: string
+    specialMarkings: string
+    importExport: string
+    earTag: string
+    earTagLoc: string
+    brandNum: string
+    brandNumLoc: string
+    tattoo: string
+    tattooLoc: string
+    electronicId: string
+    electronicIdLoc: string
+    otherId: string
+    otherIdLoc: string
+    metalId: string
+    metalIdLoc: string
+    genetic: string
+    bloodline: string
     showAnimal: boolean
     aiBull: boolean
     reference: boolean
@@ -36,6 +58,28 @@ interface S {
 export default class AddBull extends Component<P, S> {
     componentWillMount() {
         this.state = {
+            name: '',
+            regNum: '',
+            dateOfBirth: '',
+            birthWeight: 0,
+            breed: '',
+            color: '',
+            specialMarkings: '',
+            importExport: '',
+            earTag: '',
+            earTagLoc: '',
+            brandNum: '',
+            brandNumLoc: '',
+            tattoo: '',
+            tattooLoc: '',
+            electronicId: '',
+            electronicIdLoc: '',
+            otherId: '',
+            otherIdLoc: '',
+            metalId: '',
+            metalIdLoc: '',
+            genetic: '',
+            bloodline: '',
             showAnimal: false,
             aiBull: false,
             reference: false,
