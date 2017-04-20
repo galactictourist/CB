@@ -34,13 +34,15 @@ interface S {
 }
 
 export default class AddBull extends Component<P, S> {
-    state = {
-        showAnimal: false,
-        aiBull: false,
-        reference: false,
-        hornStatus: 'Polled',
-        origin: 'born',
-        imagePath: null
+    componentWillMount() {
+        this.state = {
+            showAnimal: false,
+            aiBull: false,
+            reference: false,
+            hornStatus: 'Polled',
+            origin: 'born',
+            imagePath: null
+        }
     }
 
     get btnGroup() {
