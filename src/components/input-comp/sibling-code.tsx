@@ -22,7 +22,7 @@ export default class SiblingCode extends Component<P, S> {
     }
 
     render() {
-        return <InputComp label='Genetic/Donor DAM' type='select'>
+        return <InputComp label='Sibling Code' type='select'>
             {this.options}
         </InputComp>
     }
