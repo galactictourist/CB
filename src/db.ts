@@ -1,4 +1,8 @@
 import {
+    readFileSync,
+    existsSync
+} from 'fs'
+import {
     Database,
     open
 } from 'sqlite'
@@ -6,7 +10,7 @@ import {
 import {
     dbReady
 } from './actions'
- 
+
 type ParamType = string | number
 interface ExecType {
     changes: number
@@ -17,7 +21,12 @@ interface ExecType {
 class DB {
     private db: Database = null
     constructor() {
-        open('Ranch.sqlite').then(db => {
+        var exists = existsSync('./Ranch.sqlite')
+        open('Ranch.sqlite').then(async db => {
+            if (!exists) {
+                var sql = readFileSync('./migrations/000-initial-schema.sql', 'utf-8')
+                await db.exec(sql)
+            }
             this.db = db
             dbReady.trigger()
         }).catch(err => {
