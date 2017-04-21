@@ -5,6 +5,9 @@ import {
 } from 'reactstrap'
 
 import Component from './'
+import {
+    openPage
+} from '../stores'
 
 interface P {
 }
@@ -26,7 +29,13 @@ export default class HomeView extends Component<P, S> {
 
     get bulls() {
         return <tr>
-            <td>Bulls</td>
+            <td>
+                <a href='#' onClick={event => {
+                    openPage.value = 'cattle-bull'
+                }}>
+                    Bulls
+                </a>
+            </td>
             <td>23</td>
             <td>23</td>
             <td>23</td>
