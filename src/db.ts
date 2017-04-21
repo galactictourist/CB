@@ -11,7 +11,7 @@ import {
     dbReady
 } from './actions'
 
-type ParamType = string | number
+type ParamType = string | number | boolean
 interface ExecType {
     changes: number
     lastID: number
