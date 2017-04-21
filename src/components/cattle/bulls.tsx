@@ -4,17 +4,35 @@ import {
     Table
 } from 'reactstrap'
 
+import db from '../../db'
+
 import Component from '../'
+
+import {
+    Bull
+} from '../../types'
 
 interface P {
 
 }
 
 interface S {
+    bulls: Bull[]
 }
 
 export default class CattleBull extends Component<P, S> {
+    async componentWillMount() {
+        this.state = {
+            bulls: []
+        }
+
+        var bulls = await db.get<Bull>('SELECT * FROM Bull')
+        this.setState({ bulls })
+    }
+
     get bulls() {
+        const s = this.state
+
         return <Table bordered hover striped>
             <thead>
                 <tr>
@@ -22,7 +40,14 @@ export default class CattleBull extends Component<P, S> {
                     <th>Status</th>
                 </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>
+                {s.bulls.map((v, i) => {
+                    return <tr key={i}>
+                        <td>{v.name}</td>
+                        <td>Active</td>
+                    </tr>
+                })}
+            </tbody>
         </Table>
     }
 
