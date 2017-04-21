@@ -1,7 +1,12 @@
 import * as React from 'react'
 import {
     Container,
-    Table
+    Nav,
+    NavItem,
+    NavLink,
+    Table,
+    TabPane,
+    TabContent
 } from 'reactstrap'
 
 import db from '../../db'
@@ -59,9 +64,65 @@ export default class CattleBull extends Component<P, S> {
         </Table>
     }
 
+    get bull() {
+        const s = this.state
+        return <div>
+            <h3>
+                Editing Bull: {s.bull.name}
+            </h3>
+            <Nav tabs>
+                <NavItem>
+                    <NavLink active>Home</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink>Mortality/Carcass</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink>Med/Measurements</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink>Offspring</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink>Breeding</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink>EPD</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink>Semen</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink>Pics</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink>Pedigree</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink>Bloodlines</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink>Show</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink>Notes/Documents</NavLink>
+                </NavItem>
+            </Nav>
+        </div>
+    }
+
     render() {
+        const s = this.state
+        var v = null
+
+        if (s.bull) {
+            v = this.bull
+        } else {
+            v = this.bulls
+        }
+
         return <Container fluid>
-            {this.bulls}
+            {v}
         </Container>
     }
 }
