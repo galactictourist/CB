@@ -106,7 +106,6 @@ export default class AddBull extends Component<P, S> {
             s.breeder
         )
 
-
         return new Promise<number>((resolve, reject) => {
             exec.then(e => {
                 resolve(e.lastID)
