@@ -115,12 +115,86 @@ export default class AddBull extends Component<P, S> {
         })
     }
 
+    async update(): Promise<boolean> {
+        const s = this.state
+        const queryString = `
+            UPDATE Bull
+            SET
+                name = ?,
+                regNum = ?,
+                dateOfBirth = ?,
+                birthWeight = ?,
+                breed = ?,
+                color = ?,
+                specialMarkings = ?,
+                importExport = ?,
+                earTag = ?,
+                earTagLoc = ?,
+                brandNum = ?,
+                brandNumLoc = ?,
+                tattoo = ?,
+                tattooLoc = ?,
+                electronicId = ?,
+                electronicIdLoc = ?,
+                otherId = ?,
+                otherIdLoc = ?,
+                genetic = ?,
+                bloodline = ?,
+                siblingCode = ?,
+                cloned = ?,
+                showAnimal = ?,
+                aiBull = ?,
+                reference = ?,
+                hornStatus = ?,
+                origin = ?,
+                imagePath = ?,
+                pasture = ?,
+                pen = ?,
+                currBullOwner = ?,
+                bullSire = ?,
+                bullDame = ?,
+                comments = ?,
+                purchaseFrom = ?,
+                purchaseDate = ?,
+                price = ?,
+                breeder = ?
+            WHERE
+                id = ?
+        `
+        var exec = db.exec(queryString, s.name, s.regNum, s.dateOfBirth,
+            s.birthWeight, s.breed, s.color, s.specialMarkings, s.importExport,
+            s.earTag, s.earTagLoc, s.brandNum, s.brandNumLoc, s.tattoo,
+            s.tattooLoc, s.electronicId, s.electronicIdLoc, s.otherId,
+            s.otherIdLoc, s.genetic, s.bloodline, s.siblingCode, s.cloned,
+            s.showAnimal, s.aiBull, s.reference, s.hornStatus, s.origin,
+            s.imagePath, s.pasture, s.pen, s.currBullOwner, s.bullSire,
+            s.bullDame, s.comments, s.purchaseFrom, s.purchaseDate, s.price,
+            s.breeder, s.id)
+
+        return new Promise<boolean>((resolve, reject) => {
+            exec.then(e => {
+                if (e.changes) {
+                    resolve(true)
+                } else {
+                    resolve(false)
+                }
+            }).catch(err => {
+                reject(err)
+            })
+        })
+    }
+
     async save() {
         const p = this.props
         const s = this.state
 
         try {
             if (p.bull) {
+                if (await this.update()) {
+                    alert(`Saved bull info`)
+                } else {
+                    alert(`Didn't save`)
+                }
             } else {
                 let id = await this.insert()
                 alert(`Saved! Bull ID: ${id}`)
