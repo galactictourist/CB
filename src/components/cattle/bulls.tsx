@@ -33,7 +33,7 @@ export default class CattleBull extends Component<P, S> {
     get bulls() {
         const s = this.state
 
-        return <Table bordered hover striped>
+        return <Table bordered striped>
             <thead>
                 <tr>
                     <th>Name/ID</th>
