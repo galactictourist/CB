@@ -28,6 +28,7 @@ import GeneticDonorInp from '../input-comp/genetic-donor'
 import SiblingCodeInp from '../input-comp/sibling-code'
 
 interface P {
+    bull?: BullInterface
 }
 
 type S = BullInterface
@@ -78,7 +79,7 @@ export default class AddBull extends Component<P, S> {
         }
     }
 
-    save() {
+    async insert(): Promise<number> {
         const s = this.state
         const queryString = `
             INSERT INTO Bull (name, regNum, dateOfBirth, birthWeight, breed,
@@ -93,21 +94,41 @@ export default class AddBull extends Component<P, S> {
                 ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
             )
         `
+        var exec = db.exec(queryString, s.name, s.regNum, s.dateOfBirth,
+            s.birthWeight, s.breed, s.color, s.specialMarkings, s.importExport,
+            s.earTag, s.earTagLoc, s.brandNum, s.brandNumLoc, s.tattoo,
+            s.tattooLoc, s.electronicId, s.electronicIdLoc, s.otherId,
+            s.otherIdLoc, s.genetic, s.bloodline, s.siblingCode, s.cloned,
+            s.showAnimal, s.aiBull, s.reference, s.hornStatus, s.origin,
+            s.imagePath, s.pasture, s.pen, s.currBullOwner, s.bullSire,
+            s.bullDame, s.comments, s.purchaseFrom, s.purchaseDate, s.price,
+            s.breeder
+        )
 
-        db.exec(queryString, s.name, s.regNum, s.dateOfBirth, s.birthWeight,
-            s.breed, s.color, s.specialMarkings, s.importExport, s.earTag,
-            s.earTagLoc, s.brandNum, s.brandNumLoc, s.tattoo, s.tattooLoc,
-            s.electronicId, s.electronicIdLoc, s.otherId, s.otherIdLoc,
-            s.genetic, s.bloodline, s.siblingCode, s.cloned, s.showAnimal,
-            s.aiBull, s.reference, s.hornStatus, s.origin, s.imagePath,
-            s.pasture, s.pen, s.currBullOwner, s.bullSire, s.bullDame,
-            s.comments, s.purchaseFrom, s.purchaseDate, s.price, s.breeder
-        ).then(e => {
-            alert(`Success! Bull's id: ${e.lastID}`)
-        }).catch(e => {
-            alert('Failed')
-            console.error(e)
+
+        return new Promise<number>((resolve, reject) => {
+            exec.then(e => {
+                resolve(e.lastID)
+            }).catch(err => {
+                reject(err)
+            })
         })
+    }
+
+    async save() {
+        const p = this.props
+        const s = this.state
+
+        try {
+            if (p.bull) {
+            } else {
+                var id = await this.insert()
+                alert(`Saved! Bull ID: ${id}`)
+            }
+        } catch (err) {
+            alert('Failed to save')
+            console.error(err)
+        }
     }
 
     get btnGroup() {
