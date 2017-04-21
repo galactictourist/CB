@@ -63,7 +63,7 @@ class App extends Component<P, S> {
             <NavBar />
             <div style={{
                 position: 'fixed',
-                top: 50,
+                top: 60,
                 bottom: 0,
                 left: 0,
                 right: 0,
