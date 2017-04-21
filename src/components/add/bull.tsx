@@ -35,7 +35,8 @@ type S = BullInterface
 
 export default class AddBull extends Component<P, S> {
     componentWillMount() {
-        this.state = {
+        const p = this.props
+        this.state = p.bull || {
             name: '',
             regNum: '',
             dateOfBirth: '',
