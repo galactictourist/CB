@@ -18,12 +18,14 @@ interface P {
 
 interface S {
     bulls: Bull[]
+    bull: Bull
 }
 
 export default class CattleBull extends Component<P, S> {
     async componentWillMount() {
         this.state = {
-            bulls: []
+            bulls: [],
+            bull: null
         }
 
         var bulls = await db.get<Bull>('SELECT * FROM Bull')
@@ -44,7 +46,9 @@ export default class CattleBull extends Component<P, S> {
                 {s.bulls.map((v, i) => {
                     return <tr key={i}>
                         <td>
-                            <a href='#'>
+                            <a href='#' onClick={event => {
+                                this.setState({ bull: v })
+                            }}>
                                 {v.name}
                             </a>
                         </td>
