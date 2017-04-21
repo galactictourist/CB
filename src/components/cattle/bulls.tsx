@@ -12,6 +12,7 @@ import {
 import db from '../../db'
 
 import Component from '../'
+import EditBull from '../add/bull'
 
 import {
     Bull
@@ -108,6 +109,11 @@ export default class CattleBull extends Component<P, S> {
                     <NavLink>Notes/Documents</NavLink>
                 </NavItem>
             </Nav>
+            <TabContent activeTab='1'>
+                <TabPane tabId='1'>
+                    <EditBull bull={s.bull} />
+                </TabPane>
+            </TabContent>
         </div>
     }
 
