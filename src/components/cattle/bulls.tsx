@@ -43,7 +43,11 @@ export default class CattleBull extends Component<P, S> {
             <tbody>
                 {s.bulls.map((v, i) => {
                     return <tr key={i}>
-                        <td>{v.name}</td>
+                        <td>
+                            <a href='#'>
+                                {v.name}
+                            </a>
+                        </td>
                         <td>Active</td>
                     </tr>
                 })}
