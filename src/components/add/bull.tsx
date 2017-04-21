@@ -122,7 +122,7 @@ export default class AddBull extends Component<P, S> {
         try {
             if (p.bull) {
             } else {
-                var id = await this.insert()
+                let id = await this.insert()
                 alert(`Saved! Bull ID: ${id}`)
             }
         } catch (err) {
