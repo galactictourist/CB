@@ -86,10 +86,11 @@ export default class AddBull extends Component<P, S> {
             INSERT INTO Bull (name, regNum, dateOfBirth, birthWeight, breed,
                 color, specialMarkings, importExport, earTag, earTagLoc,
                 brandNum, brandNumLoc, tattoo, tattooLoc, electronicId,
-                electronicIdLoc, otherId, otherIdLoc, genetic, bloodline,
-                siblingCode, cloned, showAnimal, aiBull, reference, hornStatus,
-                origin, imagePath, pasture, pen, currBullOwner, bullSire,
-                bullDame, comments, purchaseFrom, purchaseDate, price, breeder)
+                electronicIdLoc, otherId, otherIdLoc, metalId, metalIdLoc,
+                genetic, bloodline, siblingCode, cloned, showAnimal, aiBull,
+                reference, hornStatus, origin, imagePath, pasture, pen,
+                currBullOwner, bullSire, bullDame, comments, purchaseFrom,
+                purchaseDate, price, breeder)
             VALUES (
                 ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
                 ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
@@ -99,11 +100,11 @@ export default class AddBull extends Component<P, S> {
             s.birthWeight, s.breed, s.color, s.specialMarkings, s.importExport,
             s.earTag, s.earTagLoc, s.brandNum, s.brandNumLoc, s.tattoo,
             s.tattooLoc, s.electronicId, s.electronicIdLoc, s.otherId,
-            s.otherIdLoc, s.genetic, s.bloodline, s.siblingCode, s.cloned,
-            s.showAnimal, s.aiBull, s.reference, s.hornStatus, s.origin,
-            s.imagePath, s.pasture, s.pen, s.currBullOwner, s.bullSire,
-            s.bullDame, s.comments, s.purchaseFrom, s.purchaseDate, s.price,
-            s.breeder
+            s.otherIdLoc, s.metalId, s.metalIdLoc, s.genetic, s.bloodline,
+            s.siblingCode, s.cloned, s.showAnimal, s.aiBull, s.reference,
+            s.hornStatus, s.origin, s.imagePath, s.pasture, s.pen,
+            s.currBullOwner, s.bullSire, s.bullDame, s.comments, s.purchaseFrom,
+            s.purchaseDate, s.price, s.breeder
         )
 
         return new Promise<number>((resolve, reject) => {
@@ -138,6 +139,8 @@ export default class AddBull extends Component<P, S> {
                 electronicIdLoc = ?,
                 otherId = ?,
                 otherIdLoc = ?,
+                metalId = ?,
+                metalIdLoc = ?,
                 genetic = ?,
                 bloodline = ?,
                 siblingCode = ?,
@@ -165,11 +168,11 @@ export default class AddBull extends Component<P, S> {
             s.birthWeight, s.breed, s.color, s.specialMarkings, s.importExport,
             s.earTag, s.earTagLoc, s.brandNum, s.brandNumLoc, s.tattoo,
             s.tattooLoc, s.electronicId, s.electronicIdLoc, s.otherId,
-            s.otherIdLoc, s.genetic, s.bloodline, s.siblingCode, s.cloned,
-            s.showAnimal, s.aiBull, s.reference, s.hornStatus, s.origin,
-            s.imagePath, s.pasture, s.pen, s.currBullOwner, s.bullSire,
-            s.bullDame, s.comments, s.purchaseFrom, s.purchaseDate, s.price,
-            s.breeder, s.id)
+            s.otherIdLoc, s.metalId, s.metalIdLoc, s.genetic, s.bloodline,
+            s.siblingCode, s.cloned, s.showAnimal, s.aiBull, s.reference,
+            s.hornStatus, s.origin, s.imagePath, s.pasture, s.pen,
+            s.currBullOwner, s.bullSire, s.bullDame, s.comments, s.purchaseFrom,
+            s.purchaseDate, s.price, s.breeder, s.id)
 
         return new Promise<boolean>((resolve, reject) => {
             exec.then(e => {
