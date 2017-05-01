@@ -6,6 +6,7 @@
     "inlineSourceMap": true,
     "jsx": "react",
     "outDir": "app",
+    "diagnostics": true,
     "pretty": true
   },
   "include": [
