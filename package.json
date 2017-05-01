@@ -27,7 +27,7 @@
     "electron-packager": "^8.6.0",
     "electron-react-devtools": "^0.4.0",
     "electron-reload": "^1.1.0",
-    "typescript": "^2.2.2"
+    "typescript": "^2.3.2"
   },
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
