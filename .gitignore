@@ -9,3 +9,5 @@ build
 app
 
 Ranch.sqlite
+
+**/*.log
