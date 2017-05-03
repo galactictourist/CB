@@ -681,7 +681,9 @@ export default class AddBull extends Component<P, S> {
                         this.setState(this.defaultVals)
                     }}>Cancel</Button>
                     {' '}
-                    <Button>Clear</Button>
+                    <Button onClick={event => {
+                        this.setState(EMPTY_BULL)
+                    }}>Clear</Button>
                 </Col>
             </Row>
         </Container>
