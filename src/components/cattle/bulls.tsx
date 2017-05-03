@@ -13,6 +13,7 @@ import db from '../../db'
 
 import Component from '../'
 import EditBull from '../add/bull'
+import BullDeath from '../mortality/bull'
 
 import {
     Bull
@@ -126,6 +127,9 @@ export default class CattleBull extends Component<P, S> {
             <TabContent activeTab={s.tab}>
                 <TabPane tabId={1}>
                     <EditBull bull={s.bull} />
+                </TabPane>
+                <TabPane tabId={2}>
+                    <BullDeath />
                 </TabPane>
             </TabContent>
         </div>
