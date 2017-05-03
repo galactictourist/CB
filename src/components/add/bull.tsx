@@ -83,7 +83,7 @@ export default class AddBull extends Component<P, S> {
     async insert(): Promise<number> {
         const s = this.state
         const queryString = `
-            INSERT INTO Bull (name, regNum, dateOfBirth, birthWeight, breed,
+            INSERT INTO Bull (name, active, regNum, dateOfBirth, birthWeight, breed,
                 color, specialMarkings, importExport, earTag, earTagLoc,
                 brandNum, brandNumLoc, tattoo, tattooLoc, electronicId,
                 electronicIdLoc, otherId, otherIdLoc, metalId, metalIdLoc,
@@ -92,7 +92,7 @@ export default class AddBull extends Component<P, S> {
                 currBullOwner, bullSire, bullDame, comments, purchaseFrom,
                 purchaseDate, price, breeder)
             VALUES (
-                ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+                ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
                 ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
             )
         `
