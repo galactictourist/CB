@@ -4,7 +4,7 @@ import {
     writeFileSync,
     mkdirSync
 } from 'fs'
-import { notify } from 'electron-notify'
+import { notify } from 'node-notifier'
 
 import * as actions from './actions'
 import * as stores from './stores'
@@ -25,8 +25,8 @@ if (existsSync(Configs.APP)) {
         console.error(err)
         notify({
             title: 'Error',
-            text: 'Couldn\'t read configurations'
-        })
+            message: 'Couldn\'t read configurations',
+            sound: true
     }
 }
 
@@ -35,16 +35,15 @@ actions.ranchInfoSave.subscribe(value => {
     try {
         writeFileSync(Configs.APP, json)
         stores.ranchInfo.value = value
-        alert('Info saved')
         notify({
             title: 'Success',
-            text: 'Info Saved'
+            message: 'Info Saved',
         })
     } catch (err) {
         console.error(err)
         notify({
             title: 'Error',
-            text: 'Could not save configuration'
+            message: 'Could not save configuration',
         })
     }
 })
