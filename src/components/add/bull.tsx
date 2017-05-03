@@ -38,6 +38,7 @@ export default class AddBull extends Component<P, S> {
         const p = this.props
         this.state = p.bull || {
             name: '',
+            active: 1,
             regNum: '',
             dateOfBirth: '',
             birthWeight: 0,

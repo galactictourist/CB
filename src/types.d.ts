@@ -16,6 +16,7 @@ export interface RanchInfo {
 
 interface Bull {
     id?: number
+    active: number
     name: string
     regNum: string
     dateOfBirth: string
