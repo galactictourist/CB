@@ -11,6 +11,7 @@ import {
     Button,
     FormText
 } from 'reactstrap'
+import { cloneDeep } from 'lodash'
 
 import db from '../../db'
 
@@ -34,9 +35,11 @@ interface P {
 type S = BullInterface
 
 export default class AddBull extends Component<P, S> {
+    defaultVals: BullInterface
+
     componentWillMount() {
         const p = this.props
-        this.state = p.bull || {
+        this.defaultVals = p.bull || {
             name: '',
             active: 1,
             regNum: '',
@@ -79,6 +82,8 @@ export default class AddBull extends Component<P, S> {
             price: 0,
             breeder: ''
         }
+
+        this.state = cloneDeep(this.defaultVals)
     }
 
     async insert(): Promise<number> {
