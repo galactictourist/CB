@@ -1,5 +1,6 @@
 CREATE TABLE Bull (
     id INTEGER PRIMARY KEY,
+    active INTEGER,
     name TEXT,
     regNum TEXT,
     dateOfBirth TEXT,
