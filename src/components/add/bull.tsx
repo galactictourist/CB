@@ -34,54 +34,56 @@ interface P {
 
 type S = BullInterface
 
+const EMPTY_BULL:BullInterface={
+    name: '',
+    active: 1,
+    regNum: '',
+    dateOfBirth: '',
+    birthWeight: 0,
+    breed: '',
+    color: '',
+    specialMarkings: '',
+    importExport: '',
+    earTag: '',
+    earTagLoc: '',
+    brandNum: '',
+    brandNumLoc: '',
+    tattoo: '',
+    tattooLoc: '',
+    electronicId: '',
+    electronicIdLoc: '',
+    otherId: '',
+    otherIdLoc: '',
+    metalId: '',
+    metalIdLoc: '',
+    genetic: '',
+    bloodline: '',
+    siblingCode: '',
+    cloned: '',
+    showAnimal: false,
+    aiBull: false,
+    reference: false,
+    hornStatus: 'Polled',
+    origin: 'born',
+    imagePath: null,
+    pasture: '',
+    pen: '',
+    currBullOwner: '',
+    bullSire: '',
+    bullDame: '',
+    comments: '',
+    purchaseFrom: '',
+    purchaseDate: '',
+    price: 0,
+    breeder: ''
+}
+
 export default class AddBull extends Component<P, S> {
     defaultVals: BullInterface
 
     componentWillMount() {
         const p = this.props
-        this.defaultVals = p.bull || {
-            name: '',
-            active: 1,
-            regNum: '',
-            dateOfBirth: '',
-            birthWeight: 0,
-            breed: '',
-            color: '',
-            specialMarkings: '',
-            importExport: '',
-            earTag: '',
-            earTagLoc: '',
-            brandNum: '',
-            brandNumLoc: '',
-            tattoo: '',
-            tattooLoc: '',
-            electronicId: '',
-            electronicIdLoc: '',
-            otherId: '',
-            otherIdLoc: '',
-            metalId: '',
-            metalIdLoc: '',
-            genetic: '',
-            bloodline: '',
-            siblingCode: '',
-            cloned: '',
-            showAnimal: false,
-            aiBull: false,
-            reference: false,
-            hornStatus: 'Polled',
-            origin: 'born',
-            imagePath: null,
-            pasture: '',
-            pen: '',
-            currBullOwner: '',
-            bullSire: '',
-            bullDame: '',
-            comments: '',
-            purchaseFrom: '',
-            purchaseDate: '',
-            price: 0,
-            breeder: ''
-        }
+        this.defaultVals = p.bull || EMPTY_BULL
 
         this.state = cloneDeep(this.defaultVals)
     }
