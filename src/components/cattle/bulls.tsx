@@ -58,7 +58,9 @@ export default class CattleBull extends Component<P, S> {
                                 {v.name}
                             </a>
                         </td>
-                        <td>Active</td>
+                        <td>
+                            {v.active ? 'Active' : 'Not Active'}
+                        </td>
                     </tr>
                 })}
             </tbody>
