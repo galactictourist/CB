@@ -111,8 +111,8 @@ export default class CattleBull extends Component<P, S> {
                     <NavLink>Notes/Documents</NavLink>
                 </NavItem>
             </Nav>
-            <TabContent activeTab='1'>
-                <TabPane tabId='1'>
+            <TabContent activeTab={1}>
+                <TabPane tabId={1}>
                     <EditBull bull={s.bull} />
                 </TabPane>
             </TabContent>
