@@ -25,13 +25,15 @@ interface P {
 interface S {
     bulls: Bull[]
     bull: Bull
+    tab: number
 }
 
 export default class CattleBull extends Component<P, S> {
     async componentWillMount() {
         this.state = {
             bulls: [],
-            bull: null
+            bull: null,
+            tab: 1
         }
 
         var bulls = await db.get<Bull>('SELECT * FROM Bull')
@@ -75,10 +77,20 @@ export default class CattleBull extends Component<P, S> {
             </h3>
             <Nav tabs>
                 <NavItem>
-                    <NavLink active>Home</NavLink>
+                    <NavLink
+                        active={s.tab == 1}
+                        onClick={event => {
+                            this.setState({ tab: 1 })
+                        }}
+                        href='#'>Home</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink>Mortality/Carcass</NavLink>
+                    <NavLink
+                        active={s.tab == 2}
+                        onClick={event => {
+                            this.setState({ tab: 2 })
+                        }}
+                        href='#'>Mortality/Carcass</NavLink>
                 </NavItem>
                 <NavItem>
                     <NavLink>Med/Measurements</NavLink>
@@ -111,7 +123,7 @@ export default class CattleBull extends Component<P, S> {
                     <NavLink>Notes/Documents</NavLink>
                 </NavItem>
             </Nav>
-            <TabContent activeTab={1}>
+            <TabContent activeTab={s.tab}>
                 <TabPane tabId={1}>
                     <EditBull bull={s.bull} />
                 </TabPane>
