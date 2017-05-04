@@ -87,16 +87,16 @@ interface Cow {
 	siblingCode: string
 	cloned: string
 	showAnimal: boolean
-	aiBull: boolean
+	aiCow: boolean
 	reference: boolean
 	hornStatus: string
 	origin: string
 	imagePath: string
 	pasture: string
 	pen: string
-	currBullOwner: string
-	bullSire: string
-	bullDame: string
+	currCowOwner: string
+	cowSire: string
+	cowDame: string
 	comments: string
 	purchaseFrom: string
 	purchaseDate: string
