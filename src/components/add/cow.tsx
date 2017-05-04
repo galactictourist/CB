@@ -9,6 +9,7 @@ import {
 	Button
 } from 'reactstrap'
 import { clone } from 'lodash'
+import { notify } from 'node-notifier'
 
 import db from '../../db'
 
@@ -85,6 +86,149 @@ export default class AddCow extends Component<P, S> {
 		this.state = clone(this.defaultVals)
 	}
 
+	async insert(): Promise<number> {
+		const s = this.state
+		const queryString = `
+			INSERT INTO Cow (name, active, regNum, dateOfBirth, birthWeight, breed,
+				color, specialMarkings, importExport, earTag, earTagLoc,
+				brandNum, brandNumLoc, tattoo, tattooLoc, electronicId,
+				electronicIdLoc, otherId, otherIdLoc, metalId, metalIdLoc,
+				genetic, bloodline, siblingCode, cloned, showAnimal, aiCow,
+				reference, hornStatus, origin, imagePath, pasture, pen,
+				currCowOwner, cowSire, cowDame, comments, purchaseFrom,
+				purchaseDate, price, breeder)
+			VALUES (
+				?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+				?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+			)
+		`
+		var exec = db.exec(queryString, s.name, s.regNum, s.dateOfBirth,
+			s.birthWeight, s.breed, s.color, s.specialMarkings, s.importExport,
+			s.earTag, s.earTagLoc, s.brandNum, s.brandNumLoc, s.tattoo,
+			s.tattooLoc, s.electronicId, s.electronicIdLoc, s.otherId,
+			s.otherIdLoc, s.metalId, s.metalIdLoc, s.genetic, s.bloodline,
+			s.siblingCode, s.cloned, s.showAnimal, s.aiCow, s.reference,
+			s.hornStatus, s.origin, s.imagePath, s.pasture, s.pen,
+			s.currCowOwner, s.cowSire, s.cowDame, s.comments, s.purchaseFrom,
+			s.purchaseDate, s.price, s.breeder
+		)
+
+		return new Promise<number>((resolve, reject) => {
+			exec.then(e => {
+				resolve(e.lastID)
+			}).catch(err => {
+				reject(err)
+			})
+		})
+	}
+
+	async update(): Promise<boolean> {
+		const s = this.state
+		const queryString = `
+			UPDATE Bull
+			SET
+				name = ?,
+				regNum = ?,
+				dateOfBirth = ?,
+				birthWeight = ?,
+				breed = ?,
+				color = ?,
+				specialMarkings = ?,
+				importExport = ?,
+				earTag = ?,
+				earTagLoc = ?,
+				brandNum = ?,
+				brandNumLoc = ?,
+				tattoo = ?,
+				tattooLoc = ?,
+				electronicId = ?,
+				electronicIdLoc = ?,
+				otherId = ?,
+				otherIdLoc = ?,
+				metalId = ?,
+				metalIdLoc = ?,
+				genetic = ?,
+				bloodline = ?,
+				siblingCode = ?,
+				cloned = ?,
+				showAnimal = ?,
+				aiCow = ?,
+				reference = ?,
+				hornStatus = ?,
+				origin = ?,
+				imagePath = ?,
+				pasture = ?,
+				pen = ?,
+				currCowOwner = ?,
+				cowSire = ?,
+				cowDame = ?,
+				comments = ?,
+				purchaseFrom = ?,
+				purchaseDate = ?,
+				price = ?,
+				breeder = ?
+			WHERE
+				id = ?
+		`
+		var exec = db.exec(queryString, s.name, s.regNum, s.dateOfBirth,
+			s.birthWeight, s.breed, s.color, s.specialMarkings, s.importExport,
+			s.earTag, s.earTagLoc, s.brandNum, s.brandNumLoc, s.tattoo,
+			s.tattooLoc, s.electronicId, s.electronicIdLoc, s.otherId,
+			s.otherIdLoc, s.metalId, s.metalIdLoc, s.genetic, s.bloodline,
+			s.siblingCode, s.cloned, s.showAnimal, s.aiCow, s.reference,
+			s.hornStatus, s.origin, s.imagePath, s.pasture, s.pen,
+			s.currCowOwner, s.cowSire, s.cowDame, s.comments, s.purchaseFrom,
+			s.purchaseDate, s.price, s.breeder, s.id)
+
+		return new Promise<boolean>((resolve, reject) => {
+			exec.then(e => {
+				if (e.changes) {
+					resolve(true)
+				} else {
+					resolve(false)
+				}
+			}).catch(err => {
+				reject(err)
+			})
+		})
+	}
+
+	async save() {
+		const p = this.props
+		const s = this.state
+
+		try {
+			if (p.cow) {
+				if (await this.update()) {
+					notify({
+						title: 'Success',
+						message: `The cow's information was saved`,
+						sound: true
+					})
+				} else {
+					notify({
+						title: 'Error',
+						message: `An error occured while trying to save cow's info`,
+						sound: true
+					})
+				}
+			} else {
+				let id = await this.insert()
+				notify({
+					title: 'Success',
+					message: `Cow's ID: ${id}`,
+					sound: true
+				})
+			}
+		} catch (err) {
+			notify({
+				title: 'Error',
+				message: `An error occured while saving cow's info`,
+				sound: true
+			})
+			console.error(err)
+		}
+	}
 
 	get btnGroup() {
 		const s = this.state
@@ -544,6 +688,7 @@ export default class AddCow extends Component<P, S> {
 			}}>
 				<Col sm={12}>
 					<Button onClick={event => {
+						this.save()
 					}}>Save</Button>
 					{' '}
 					<Button onClick={event => {
