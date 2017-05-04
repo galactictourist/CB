@@ -17,6 +17,10 @@ interface P {
     placeholder?: string
     value?: string | number
     onChange?: (args: string) => void
+    min?: number | string
+    max?: number | string
+    minLength?: number
+    maxLength?: number
 }
 
 interface S {
@@ -42,6 +46,10 @@ export default class InputComp extends React.Component<P, S> {
                         p.onChange(event.target.value)
                     }
                 }}
+                min={p.min}
+                max={p.max}
+                minLength={p.minLength}
+                maxLength={p.maxLength}
                 children={p.children}
             />
         </FormGroup>
