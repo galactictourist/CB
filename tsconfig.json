@@ -7,7 +7,11 @@
     "jsx": "react",
     "outDir": "app",
     "diagnostics": true,
-    "pretty": true
+    "pretty": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ]
   },
   "include": [
     "src/**/*.ts",
