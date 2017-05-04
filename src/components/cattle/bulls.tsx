@@ -36,7 +36,7 @@ export default class CattleBull extends Component<P, S> {
 		this.state = {
 			bulls: [],
 			bull: null,
-			tab: 2
+			tab: 1
 		}
 
 		if (db.ready) {
