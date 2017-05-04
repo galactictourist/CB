@@ -4,6 +4,7 @@ config/*
 
 # build output
 build
+dist
 
 # TS compiler output
 app
