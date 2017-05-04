@@ -83,7 +83,6 @@ export default class AddCow extends Component<P, S> {
 		this.defaultVals = p.cow || COW_DEFAULTS
 
 		this.state = clone(this.defaultVals)
-		console.log(this.state)
 	}
 
 
