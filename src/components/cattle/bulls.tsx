@@ -35,7 +35,7 @@ export default class CattleBull extends Component<P, S> {
         this.state = {
             bulls: [],
             bull: null,
-            tab: 1
+            tab: 2
         }
 
         if (db.ready) {
@@ -102,7 +102,12 @@ export default class CattleBull extends Component<P, S> {
                         href='#'>Mortality/Carcass</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink>Med/Measurements</NavLink>
+                    <NavLink
+                        active={s.tab == 3}
+                        onClick={event => {
+                            this.setState({ tab: 3 })
+                        }}
+                        href='#'>Med/Measurements</NavLink>
                 </NavItem>
                 <NavItem>
                     <NavLink>Offspring</NavLink>
