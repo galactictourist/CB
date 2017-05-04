@@ -53,9 +53,13 @@ export default class HomeView extends Component<P, S> {
 			heiferReference: 0,
 		}
 
-		this.subscribe(dbReady, () => {
+		if (!db.ready) {
+			this.subscribe(dbReady, () => {
+				this.count()
+			})
+		} else {
 			this.count()
-		})
+		}
 	}
 
 	count() {
