@@ -32,7 +32,7 @@ interface S {
 }
 
 export default class HomeView extends Component<P, S> {
-    comonentWillMount() {
+    componentWillMount() {
         this.state = {
             bullActive: 0,
             bullInactive: 0,
@@ -64,6 +64,8 @@ export default class HomeView extends Component<P, S> {
     }
 
     get bulls() {
+        const s = this.state
+
         return <tr>
             <td>
                 <a href='#' onClick={event => {
@@ -72,45 +74,53 @@ export default class HomeView extends Component<P, S> {
                     Bulls
                 </a>
             </td>
-            <td>23</td>
-            <td>23</td>
-            <td>23</td>
+            <td>{s.bullActive}</td>
+            <td>{s.bullInactive}</td>
+            <td>{s.bullReference}</td>
         </tr>
     }
 
     get calves() {
+        const s = this.state
+
         return <tr>
             <td>Calves</td>
-            <td>23</td>
-            <td>23</td>
-            <td>23</td>
+            <td>{s.calfActive}</td>
+            <td>{s.calfInactive}</td>
+            <td>{s.calfReference}</td>
         </tr>
     }
 
     get steers() {
+        const s = this.state
+
         return <tr>
             <td>Steers</td>
-            <td>23</td>
-            <td>23</td>
-            <td>23</td>
+            <td>{s.steersActive}</td>
+            <td>{s.steersInactive}</td>
+            <td>{s.steersReference}</td>
         </tr>
     }
 
     get cows() {
+        const s = this.state
+
         return <tr>
             <td>Cows</td>
-            <td>23</td>
-            <td>23</td>
-            <td>23</td>
+            <td>{s.cowActive}</td>
+            <td>{s.cowInactive}</td>
+            <td>{s.cowReference}</td>
         </tr>
     }
 
     get heifers() {
+        const s = this.state
+
         return <tr>
             <td>Heifers</td>
-            <td>23</td>
-            <td>23</td>
-            <td>23</td>
+            <td>{s.heiferActive}</td>
+            <td>{s.heiferInactive}</td>
+            <td>{s.heiferReference}</td>
         </tr>
     }
 
