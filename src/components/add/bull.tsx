@@ -12,6 +12,7 @@ import {
 	FormText
 } from 'reactstrap'
 import { cloneDeep } from 'lodash'
+import { notify } from 'node-notifier'
 
 import db from '../../db'
 
@@ -202,16 +203,36 @@ export default class AddBull extends Component<P, S> {
 		try {
 			if (p.bull) {
 				if (await this.update()) {
-					alert(`Saved bull info`)
+					notify({
+						title: 'Success',
+						message: `The bull's information was saved`,
+						sound: true
+					})
+					// alert(`Saved bull info`)
 				} else {
-					alert(`Didn't save`)
+					notify({
+						title: 'Error',
+						message: `An error occured while trying to save bull's info`,
+						sound: true
+					})
+					// alert(`Didn't save`)
 				}
 			} else {
 				let id = await this.insert()
-				alert(`Saved! Bull ID: ${id}`)
+				notify({
+					title: 'Success',
+					message: `Bull's ID: ${id}`,
+					sound: true
+				})
+				// alert(`Saved! Bull ID: ${id}`)
 			}
 		} catch (err) {
-			alert('Failed to save')
+			notify({
+				title: 'Error',
+				message: `An error occured while saving bull's info`,
+				sound: true
+			})
+			// alert('Failed to save')
 			console.error(err)
 		}
 	}
