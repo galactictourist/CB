@@ -17,6 +17,7 @@ import AddCalf from './components/add/calf'
 import AddSteer from './components/add/steer'
 
 import CattleBulls from './components/cattle/bulls'
+import CattleCows from './components/cattle/cows'
 
 interface P { }
 
@@ -45,6 +46,8 @@ class App extends Component<P, S> {
 			return <AddSteer />
 		} else if (page == 'cattle-bull') {
 			return <CattleBulls />
+		} else if (page == 'cattle-cow') {
+			return <CattleCows />
 		}
 
 		return null

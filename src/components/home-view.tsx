@@ -103,7 +103,11 @@ export default class HomeView extends Component<P, S> {
 		const s = this.state
 
 		return <tr>
-			<td>Calves</td>
+			<td>
+				<a href='#' onClick={event => {
+					openPage.value = 'cattle-cow'
+				}}>Cows</a>
+			</td>
 			<td>{s.calfActive}</td>
 			<td>{s.calfInactive}</td>
 			<td>{s.calfReference}</td>
