@@ -27,6 +27,7 @@ if (existsSync(Configs.APP)) {
             title: 'Error',
             message: 'Couldn\'t read configurations',
             sound: true
+        })
     }
 }
 
