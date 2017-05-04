@@ -16,7 +16,7 @@ export default class BullMedMeasurement extends Component<P, S> {
 	render() {
 
 		return <Container fluid>
-			<h3>Medical & Measurements</h3>
+			<h2>Medical & Measurements</h2>
 		</Container>
 	}
 }
