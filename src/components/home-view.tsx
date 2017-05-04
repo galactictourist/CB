@@ -3,6 +3,8 @@ import {
     Container,
     Table,
 } from 'reactstrap'
+import db from '../db'
+import { dbReady } from '../actions'
 
 import Component from './'
 import {
@@ -50,6 +52,19 @@ export default class HomeView extends Component<P, S> {
             heiferInactive: 0,
             heiferReference: 0,
         }
+
+        this.subscribe(dbReady, () => {
+            this.count()
+        })
+    }
+
+    count() {
+        db.get(`SELECT COUNT(*) FROM Bull WHERE active = 1`)
+            .then(v => { this.setState({ bullActive: v[0]['COUNT(*)'] }) })
+            .catch(err => { console.error(err) })
+        db.get(`SELECT COUNT(*) FROM Bull WHERE active = 0`)
+            .then(v => { this.setState({ bullInactive: v[0]['COUNT(*)'] }) })
+            .catch(err => { console.error(err) })
     }
 
     get head() {
