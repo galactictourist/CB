@@ -20,6 +20,7 @@ interface ExecType {
 
 class DB {
     private db: Database = null
+
     constructor() {
         var exists = existsSync('./Ranch.sqlite')
         open('Ranch.sqlite').then(async db => {
@@ -32,6 +33,10 @@ class DB {
         }).catch(err => {
             console.error(err)
         })
+    }
+
+    get ready() {
+        return this.db != null
     }
 
     async get<T>(sql: string, ...params: ParamType[]): Promise<T[]> {
