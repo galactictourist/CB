@@ -14,7 +14,7 @@ import { dbReady } from '../../actions'
 
 import Component from '../'
 import EditBull from '../add/bull'
-import BullDeath from '../mortality/bull'
+import BullDeath from './bull-mortality'
 
 import {
     Bull
