@@ -10,6 +10,7 @@ import {
 } from 'reactstrap'
 
 import db from '../../db'
+import { dbReady } from '../../actions'
 
 import Component from '../'
 import EditBull from '../add/bull'
@@ -37,8 +38,15 @@ export default class CattleBull extends Component<P, S> {
             tab: 1
         }
 
-        var bulls = await db.get<Bull>('SELECT * FROM Bull')
-        this.setState({ bulls })
+        if (db.ready) {
+            var bulls = await db.get<Bull>('SELECT * FROM Bull')
+            this.setState({ bulls })
+        } else {
+            this.subscribe(dbReady, async () => {
+                var bulls = await db.get<Bull>('SELECT * FROM Bull')
+                this.setState({ bulls })
+            })
+        }
     }
 
     get bulls() {
