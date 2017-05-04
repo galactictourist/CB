@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {
-    Container
+	Container
 } from 'reactstrap'
 
 import Component from '../'
@@ -12,9 +12,9 @@ interface S {
 }
 
 export default class AddCalf extends Component<P, S> {
-    render() {
-        return <Container fluid>
-            <h2>Add New Calf</h2>
-        </Container>
-    }
+	render() {
+		return <Container fluid>
+			<h2>Add New Calf</h2>
+		</Container>
+	}
 }

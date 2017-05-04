@@ -1,18 +1,18 @@
 import Broadcaster from './broadcaster'
 
 export default class Store<T> extends Broadcaster<T> {
-    constructor(
-        protected storedValue: T = null
-    ) {
-        super()
-    }
+	constructor(
+		protected storedValue: T = null
+	) {
+		super()
+	}
 
-    get value(): T {
-        return this.storedValue
-    }
+	get value(): T {
+		return this.storedValue
+	}
 
-    set value(args: T) {
-        this.storedValue = args
-        this.broadcast(args)
-    }
+	set value(args: T) {
+		this.storedValue = args
+		this.broadcast(args)
+	}
 }

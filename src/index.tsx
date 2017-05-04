@@ -23,56 +23,56 @@ interface P { }
 interface S { }
 
 class App extends Component<P, S> {
-    componentWillMount() {
-        stores.ranchInfo.subscribe(() => { this.forceUpdate() })
-        stores.openPage.subscribe(() => { this.forceUpdate() })
-    }
+	componentWillMount() {
+		stores.ranchInfo.subscribe(() => { this.forceUpdate() })
+		stores.openPage.subscribe(() => { this.forceUpdate() })
+	}
 
-    get activePage() {
-        var page = stores.openPage.value
+	get activePage() {
+		var page = stores.openPage.value
 
-        if (page == 'home') {
-            return <HomeView />
-        } else if (page == 'info') {
-            return <NewRanchComp displayText='Ranch Info' />
-        } else if (page == 'add-bull') {
-            return <AddBull />
-        } else if (page == 'add-cow') {
-            return <AddCow />
-        } else if (page == 'add-calf') {
-            return <AddCalf />
-        } else if (page == 'add-steer') {
-            return <AddSteer />
-        } else if (page == 'cattle-bull') {
-            return <CattleBulls />
-        }
+		if (page == 'home') {
+			return <HomeView />
+		} else if (page == 'info') {
+			return <NewRanchComp displayText='Ranch Info' />
+		} else if (page == 'add-bull') {
+			return <AddBull />
+		} else if (page == 'add-cow') {
+			return <AddCow />
+		} else if (page == 'add-calf') {
+			return <AddCalf />
+		} else if (page == 'add-steer') {
+			return <AddSteer />
+		} else if (page == 'cattle-bull') {
+			return <CattleBulls />
+		}
 
-        return null
-    }
+		return null
+	}
 
-    get mainPage() {
-        if (stores.ranchInfo.value == null) {
-            return <NewRanchComp />
-        } else {
-            return this.activePage
-        }
-    }
+	get mainPage() {
+		if (stores.ranchInfo.value == null) {
+			return <NewRanchComp />
+		} else {
+			return this.activePage
+		}
+	}
 
-    render() {
-        return <div>
-            <NavBar />
-            <div style={{
-                position: 'fixed',
-                top: 60,
-                bottom: 0,
-                left: 0,
-                right: 0,
-                overflowY: 'auto'
-            }}>
-                {this.mainPage}
-            </div>
-        </div>
-    }
+	render() {
+		return <div>
+			<NavBar />
+			<div style={{
+				position: 'fixed',
+				top: 60,
+				bottom: 0,
+				left: 0,
+				right: 0,
+				overflowY: 'auto'
+			}}>
+				{this.mainPage}
+			</div>
+		</div>
+	}
 }
 
 render(<App />, document.getElementById('app'))
