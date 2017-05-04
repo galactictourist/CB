@@ -165,6 +165,115 @@ export default class BullMortality extends Component<P, S> {
                     <InputComp type='textarea' label='Comments' />
                 </Col>
             </Row>
+            <h2>Carcass</h2>
+            <Row>
+                <Col md={3}>
+                    <SelectComp
+                        label='Carcass Type'
+                        values={[
+                            'Actual/Kill Data',
+                            'Ultrasound'
+                        ]}
+                    />
+                </Col>
+                <Col md={3}>
+                    <InputComp type='date' label='Kill Date' />
+                </Col>
+                <Col>
+                    <InputComp type='textarea' label='Comment' />
+                </Col>
+            </Row>
+            <Row>
+                <Col md={6}>
+                    <InputComp type='text' label='Processing Facility' />
+                </Col>
+                <Col md={3}>
+                    <InputComp type='number' label='Feeder Weight' />
+                </Col>
+                <Col md={3}>
+                    <InputComp type='number' label='Live Weight' />
+                </Col>
+            </Row>
+            <Row>
+                <Col md={4}>
+                    <InputComp type='number' label='Carcass Weight' />
+                </Col>
+                <Col md={4}>
+                    <InputComp type='text' label='Ribeye Area' />
+                </Col>
+                <Col md={4}>
+                    <InputComp type='text' label='Ribeye Area/CWT' />
+                </Col>
+            </Row>
+            <Row>
+                <Col md={3}>
+                    <InputComp type='text' label='Fat Thickness' />
+                </Col>
+                <Col md={3}>
+                    <InputComp type='text' label='Intramascular Fat' />
+                </Col>
+                <Col md={3}>
+                    <InputComp type='text' label='Marbling' />
+                </Col>
+                <Col md={3}>
+                    <InputComp type='text' label='Frame Score' />
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <InputComp type='text' label='Maturity' />
+                </Col>
+                <Col>
+                    <InputComp type='text' label='Quality Grade' />
+                </Col>
+                <Col>
+                    <InputComp type='text' label='Yield Grade' />
+                </Col>
+                <Col>
+                    <InputComp type='text' label='PEN/LOT' />
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <InputComp type='text' label='Tenderness' />
+                </Col>
+                <Col>
+                    <InputComp type='text' label='Carcass Value' />
+                </Col>
+                <Col>
+                    <InputComp type='text' label='Dressing %' />
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <InputComp type='number' label='Report #' />
+                </Col>
+                <Col>
+                    <InputComp type='number' label='Carcass #' />
+                </Col>
+                <Col>
+                    <InputComp type='number' label='Lot #' />
+                </Col>
+                <Col>
+                    <InputComp type='number' label='Days on Feed' />
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <InputComp type='textarea' label='Comments' />
+                </Col>
+            </Row>
+            <Row style={{
+                textAlign: 'center'
+            }}>
+                <Col>
+                    <Button>Save</Button>
+                    {' '}
+                    <Button>Cancel</Button>
+                    {' '}
+                    <Button>Clear</Button>
+                </Col>
+            </Row>
         </Container>
     }
 }
