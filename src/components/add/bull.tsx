@@ -34,7 +34,7 @@ interface P {
 
 type S = BullInterface
 
-const EMPTY_BULL:BullInterface={
+const EMPTY_BULL: BullInterface = {
 	name: '',
 	active: 1,
 	regNum: '',
