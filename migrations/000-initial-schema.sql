@@ -1,5 +1,5 @@
 CREATE TABLE Bull (
-	id UNSIGNED INT PRIMARY KEY,
+	id INTEGER PRIMARY KEY,
 	active INTEGER,
 	name TEXT,
 	regNum TEXT,
@@ -44,7 +44,7 @@ CREATE TABLE Bull (
 );
 
 CREATE TABLE Cow (
-	id UNSIGNED INT PRIMARY KEY,
+	id INTEGER PRIMARY KEY,
 	active INTEGER,
 	name TEXT,
 	regNum TEXT,
@@ -89,7 +89,7 @@ CREATE TABLE Cow (
 );
 
 CREATE TABLE BullMortality (
-	bullId UNSIGNED INT,
+	bullId INTEGER,
 	dateOfDeath DATE,
 	causeOfDeath TEXT,
 	location TEXT,
