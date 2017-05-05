@@ -87,3 +87,10 @@ CREATE TABLE Cow (
     price REAL,
     breeder TEXT
 );
+
+-- INDEXES
+CREATE INDEX Bull_active_IDX ON Bull (active) ;
+CREATE INDEX Bull_name_IDX ON Bull (name) ;
+
+CREATE INDEX Cow_active_IDX ON Cow (active) ;
+CREATE INDEX Cow_name_IDX ON Cow (name) ;
