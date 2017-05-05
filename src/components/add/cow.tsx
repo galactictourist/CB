@@ -125,7 +125,7 @@ export default class AddCow extends Component<P, S> {
 	async update(): Promise<boolean> {
 		const s = this.state
 		const queryString = `
-			UPDATE Bull
+			UPDATE Cow
 			SET
 				name = ?,
 				regNum = ?,
