@@ -24,6 +24,7 @@ class DB {
 	constructor() {
 		var exists = existsSync('./Ranch.sqlite')
 		open('Ranch.sqlite').then(async db => {
+			db.exec('PRAGMA foreign_keys = ON')
 			if (!exists) {
 				var sql = readFileSync('./migrations/000-initial-schema.sql', 'utf-8')
 				await db.exec(sql)
