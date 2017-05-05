@@ -69,6 +69,11 @@ export default class HomeView extends Component<P, S> {
 		db.get(`SELECT COUNT(*) FROM Bull WHERE active = 0`)
 			.then(v => { this.setState({ bullInactive: v[0]['COUNT(*)'] }) })
 			.catch(err => { console.error(err) })
+
+		db.get(`SELECT COUNT(*) FROM Cow WHERE active = 1`)
+			.then(v => { this.setState({ cowActive: v[0]['COUNT(*)'] }) })
+		db.get(`SELECT COUNT(*) FROM Cow WHERE active = 0`)
+			.then(v => { this.setState({ cowInactive: v[0]['COUNT(*)'] }) })
 	}
 
 	get head() {
@@ -99,7 +104,7 @@ export default class HomeView extends Component<P, S> {
 		</tr>
 	}
 
-	get calves() {
+	get cows() {
 		const s = this.state
 
 		return <tr>
@@ -108,9 +113,9 @@ export default class HomeView extends Component<P, S> {
 					openPage.value = 'cattle-cow'
 				}}>Cows</a>
 			</td>
-			<td>{s.calfActive}</td>
-			<td>{s.calfInactive}</td>
-			<td>{s.calfReference}</td>
+			<td>{s.cowActive}</td>
+			<td>{s.cowInactive}</td>
+			<td>{s.cowReference}</td>
 		</tr>
 	}
 
@@ -125,14 +130,14 @@ export default class HomeView extends Component<P, S> {
 		</tr>
 	}
 
-	get cows() {
+	get calves() {
 		const s = this.state
 
 		return <tr>
-			<td>Cows</td>
-			<td>{s.cowActive}</td>
-			<td>{s.cowInactive}</td>
-			<td>{s.cowReference}</td>
+			<td>Calves</td>
+			<td>{s.calfActive}</td>
+			<td>{s.calfInactive}</td>
+			<td>{s.calfReference}</td>
 		</tr>
 	}
 
@@ -154,9 +159,9 @@ export default class HomeView extends Component<P, S> {
 				{this.head}
 				<tbody>
 					{this.bulls}
+					{this.cows}
 					{this.calves}
 					{this.steers}
-					{this.cows}
 					{this.heifers}
 				</tbody>
 			</Table>
