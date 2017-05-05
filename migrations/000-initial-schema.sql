@@ -88,6 +88,12 @@ CREATE TABLE Cow (
     breeder TEXT
 );
 
+CREATE TABLE BullMortality (
+    bullId INTEGER,
+    CONSTRAINT BullMortality_Bull_FK FOREIGN KEY (bullId) REFERENCES Bull(id)
+        ON DELETE CASCADE ON UPDATE CASCADE
+);
+
 -- INDEXES
 CREATE INDEX Bull_active_IDX ON Bull (active) ;
 CREATE INDEX Bull_name_IDX ON Bull (name) ;
