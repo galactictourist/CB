@@ -14,10 +14,18 @@ import Component from '../'
 import InputComp from '../input-comp'
 import SelectComp from '../input-comp/select'
 
+import {
+	BullMortality as BullMortalityInterface
+} from '../../types'
+
 interface P { }
-interface S { }
+interface S extends BullMortalityInterface { }
 
 export default class BullMortality extends Component<P, S> {
+	componentWillMount() {
+		this.setState({})
+	}
+
 	render() {
 
 		return <Container fluid>
