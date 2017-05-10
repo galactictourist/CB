@@ -14,7 +14,7 @@ export interface RanchInfo {
 	ranchType: number
 }
 
-interface Bull {
+export interface Bull {
 	id?: number
 	active: number
 	name: string
@@ -59,7 +59,7 @@ interface Bull {
 	breeder: string
 }
 
-interface Cow {
+export interface Cow {
 	id?: number
 	active: number
 	name: string
