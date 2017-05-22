@@ -153,3 +153,53 @@ export interface BullMortality {
 	daysOnFeed: string
 	carcassComments: string
 }
+
+export interface CowMortality {
+	bullId?: number
+	dateOfDeath: string
+	causeOfDeath: string
+	location: string
+	symptoms: string
+	policy: string
+	insured: string
+	insurance: string
+	policyNum: string
+	phone: string
+	coverageDate: string
+	coverageAmount: number
+	ratePercentage: number
+	premium: number
+	term: number
+	autopsy: string
+	results: string
+	resultsUploaded: string
+	veterinarian: string
+	vetFee: number
+	date: string
+	mortalityComments: string
+	carvassType: string
+	killDate: string
+	killComment: string
+	processingFacility: string
+	feederWeight: number
+	liveWeight: number
+	carcassWeight: number
+	ribeyeArea: string
+	ribeyeAreaCWT: string
+	fatThickness: string
+	intramascularFat: string
+	marbling: string
+	frameScore: string
+	maturity: string
+	qualityGrade: string
+	yieldGrade: string
+	penLot: string
+	tenderness: string
+	carcassValue: string
+	dressingPercentage: string
+	reportNum: string
+	carcassNum: string
+	lotNum: string
+	daysOnFeed: string
+	carcassComments: string
+}

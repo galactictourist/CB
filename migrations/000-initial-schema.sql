@@ -141,6 +141,59 @@ CREATE TABLE BullMortality (
 		ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+CREATE TABLE CowMortality (
+	cowId INTEGER,
+	dateOfDeath DATE,
+	causeOfDeath TEXT,
+	location TEXT,
+	symptoms TEXT,
+	policy TEXT,
+	insured TEXT,
+	insurance TEXT,
+	policyNum TEXT,
+	phone TEXT,
+	coverageDate DATE,
+	coverageAmount REAL,
+	ratePercentage REAL,
+	premium REAL,
+	term REAL,
+	autopsy TEXT,
+	results TEXT,
+	resultsUploaded TEXT,
+	veterinarian TEXT,
+	vetFee REAL,
+	date DATE,
+	mortalityComments TEXT,
+	carcassType TEXT,
+	killDate DATE,
+	killComment TEXT,
+	processingFacility TEXT,
+	feederWeight REAL,
+	liveWeight REAL,
+	carcassWeight REAL,
+	ribeyeArea TEXT,
+	ribeyeAreaCWT TEXT,
+	fatThickness TEXT,
+	intramascularFat TEXT,
+	marbling TEXT,
+	frameScore TEXT,
+	maturity TEXT,
+	qualityGrade TEXT,
+	yieldGrade TEXT,
+	penLot TEXT,
+	tenderness TEXT,
+	carcassValue TEXT,
+	dressingPercentage TEXT,
+	reportNum TEXT,
+	carcassNum TEXT,
+	lotNum TEXT,
+	daysOnFeed TEXT,
+	carcassComments TEXT,
+	CONSTRAINT CowMortality_PK UNIQUE (cowId),
+	CONSTRAINT CowMortality_Cow_FK FOREIGN KEY (cowId) REFERENCES Cow(id)
+		ON DELETE CASCADE ON UPDATE CASCADE
+);
+
 -- INDEXES
 CREATE INDEX Bull_active_IDX ON Bull (active) ;
 CREATE INDEX Bull_name_IDX ON Bull (name) ;
