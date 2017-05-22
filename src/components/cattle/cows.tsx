@@ -14,6 +14,7 @@ import { dbReady } from '../../actions'
 
 import Component from '../'
 import CowEdit from '../add/cow'
+import CowMortality from './cow-mortality'
 
 import {
 	Cow
@@ -141,6 +142,7 @@ export default class CattleBull extends Component<P, S> {
 					<CowEdit cow={s.cow} />
 				</TabPane>
 				<TabPane tabId={2}>
+					<CowMortality />
 				</TabPane>
 				<TabPane tabId={3}>
 				</TabPane>
