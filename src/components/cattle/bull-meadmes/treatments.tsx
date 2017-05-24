@@ -19,7 +19,7 @@ export default class Treatments extends Component<P, S> {
 	get form() {
 		return <div>
 			<Row>
-				<Col sm={2}>
+				<Col sm={4}>
 					<InputComp type='date' label='Date' />
 				</Col>
 				<Col>
