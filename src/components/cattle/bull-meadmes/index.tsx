@@ -17,6 +17,7 @@ import SelectComp from '../../input-comp/select'
 import Treatments from './treatments'
 import Vaccines from './vaccines'
 import WeightGains from './weight-gains'
+import BodyScores from './body-scores'
 
 interface P { }
 interface S {
@@ -84,6 +85,9 @@ export default class BullMedMeasurement extends Component<P, S> {
 			</TabPane>
 			<TabPane tabId={4}>
 				<WeightGains />
+			</TabPane>
+			<TabPane tabId={5}>
+				<BodyScores />
 			</TabPane>
 		</TabContent>
 	}
