@@ -24,6 +24,7 @@
     "@types/react-addons-css-transition-group": "^15.0.1",
     "@types/react-addons-transition-group": "^0.14.19",
     "@types/react-dom": "^0.14.23",
+    "@types/reactstrap": "^4.3.3",
     "@types/tether": "^1.4.1",
     "electron": "^1.6.2",
     "electron-builder": "^17.1.2",

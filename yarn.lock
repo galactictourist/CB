@@ -79,7 +79,13 @@
   version "15.0.21"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.21.tgz#29d849427237c1463abfb7b370755ee3e5b5b375"
 
-"@types/tether@^1.4.1":
+"@types/reactstrap@^4.3.3":
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/@types/reactstrap/-/reactstrap-4.3.3.tgz#7470de707fbdb9bc18125943021052956916e604"
+  dependencies:
+    "@types/tether" "*"
+
+"@types/tether@*", "@types/tether@^1.4.1":
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/@types/tether/-/tether-1.4.1.tgz#828b38034b01edce44dc42935229067aec736f4a"
 
