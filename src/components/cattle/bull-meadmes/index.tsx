@@ -14,6 +14,8 @@ import Component from '../../'
 import InputComp from '../../input-comp'
 import SelectComp from '../../input-comp/select'
 
+import Treatments from './treatments'
+
 interface P { }
 interface S {
 	tabIndex: number
@@ -68,11 +70,22 @@ export default class BullMedMeasurement extends Component<P, S> {
 		</Nav>
 	}
 
+	get tabContents() {
+		const s = this.state
+
+		return <TabContent activeTab={s.tabIndex}>
+			<TabPane tabId={1}>
+				<Treatments />
+			</TabPane>
+		</TabContent>
+	}
+
 	render() {
 
 		return <Container fluid>
 			<h2>Medical & Measurements</h2>
 			{this.tabButtons}
+			{this.tabContents}
 		</Container>
 	}
 }
