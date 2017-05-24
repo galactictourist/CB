@@ -16,6 +16,7 @@ import SelectComp from '../../input-comp/select'
 
 import Treatments from './treatments'
 import Vaccines from './vaccines'
+import Measurements from './measurements'
 
 interface P { }
 interface S {
@@ -80,6 +81,9 @@ export default class BullMedMeasurement extends Component<P, S> {
 			</TabPane>
 			<TabPane tabId={2}>
 				<Vaccines />
+			</TabPane>
+			<TabPane tabId={3}>
+				<Measurements />
 			</TabPane>
 		</TabContent>
 	}
