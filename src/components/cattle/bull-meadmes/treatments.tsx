@@ -38,6 +38,7 @@ export default class Treatments extends Component<P, S> {
 			<tbody></tbody>
 		</Table>
 	}
+
 	render() {
 		return <Container fluid>
 			<h3>Treatments</h3>
