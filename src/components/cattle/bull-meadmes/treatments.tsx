@@ -31,6 +31,8 @@ export default class Treatments extends Component<P, S> {
 					<th>Cost</th>
 					<th>Slaughter</th>
 					<th>Temperature</th>
+					<th />
+					<th />
 				</tr>
 			</thead>
 			<tbody></tbody>
