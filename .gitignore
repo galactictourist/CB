@@ -1,0 +1,14 @@
+node_modules
+config/*
+!config/.gitkeep
+
+# build output
+build
+dist
+
+# TS compiler output
+app
+
+Ranch.sqlite
+
+**/*.log
