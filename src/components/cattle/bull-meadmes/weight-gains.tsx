@@ -14,7 +14,7 @@ interface P { }
 
 interface S { }
 
-export default class Measurements extends Component<P, S> {
+export default class WeightGains extends Component<P, S> {
 	get table() {
 		return <Table bordered>
 			<thead>
