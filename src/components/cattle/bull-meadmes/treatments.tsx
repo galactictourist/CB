@@ -63,7 +63,7 @@ export default class Treatments extends Component<P, S> {
 				</Col>
 			</Row>
 			<div style={{ textAlign: 'center' }}>
-				<Button color='primary'>ASDF</Button>
+				<Button color='primary'>Save</Button>
 			</div>
 		</div>
 	}
