@@ -4,6 +4,7 @@ import {
 	Row,
 	Col,
 	Table,
+	Button
 } from 'reactstrap'
 
 import Component from '../../'
@@ -15,6 +16,58 @@ interface P { }
 interface S { }
 
 export default class Treatments extends Component<P, S> {
+	get form() {
+		return <div>
+			<Row>
+				<Col sm={2}>
+					<InputComp type='date' label='Date' />
+				</Col>
+				<Col>
+					<InputComp type='text' label='Procedure' />
+				</Col>
+			</Row>
+			<Row>
+				<Col>
+					<InputComp type='text' label='Meds' />
+				</Col>
+				<Col>
+					<InputComp type='text' label='Dosage' />
+				</Col>
+				<Col>
+					<InputComp type='text' label='Lot #' />
+				</Col>
+			</Row>
+			<Row>
+				<Col>
+					<InputComp type='text' label='Mfr.' />
+				</Col>
+				<Col>
+					<InputComp type='text' label='Done By' />
+				</Col>
+				<Col>
+					<InputComp type='text' label='Location' />
+				</Col>
+			</Row>
+			<Row>
+				<Col>
+					<InputComp type='text' label='Route' />
+				</Col>
+				<Col>
+					<InputComp type='number' label='Cost' />
+				</Col>
+				<Col>
+					<InputComp type='text' label='Slaughter' />
+				</Col>
+				<Col>
+					<InputComp type='number' label='Temperature' />
+				</Col>
+			</Row>
+			<div style={{ textAlign: 'center' }}>
+				<Button color='primary'>ASDF</Button>
+			</div>
+		</div>
+	}
+
 	get table() {
 		return <Table bordered>
 			<thead>
@@ -42,6 +95,7 @@ export default class Treatments extends Component<P, S> {
 	render() {
 		return <Container fluid>
 			<h3>Treatments</h3>
+			{this.form}
 			{this.table}
 		</Container>
 	}
