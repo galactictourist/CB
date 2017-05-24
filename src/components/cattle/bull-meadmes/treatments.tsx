@@ -40,7 +40,7 @@ export default class Treatments extends Component<P, S> {
 	}
 	render() {
 		return <Container fluid>
-			<h1>Treatments</h1>
+			<h3>Treatments</h3>
 			{this.table}
 		</Container>
 	}
