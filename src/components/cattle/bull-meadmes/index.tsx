@@ -10,9 +10,9 @@ import {
 	TabContent
 } from 'reactstrap'
 
-import Component from '../'
-import InputComp from '../input-comp'
-import SelectComp from '../input-comp/select'
+import Component from '../../'
+import InputComp from '../../input-comp'
+import SelectComp from '../../input-comp/select'
 
 interface P { }
 interface S {
